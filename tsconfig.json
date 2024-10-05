@@ -43,7 +43,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/public/*": ["./public/*"]
+      "@/public/*": ["./public/*"],
+      "@sign-in/*": ["./src/app/[locale]/(auth)/(center)/sign-in/[[...sign-in]]/*"]
     },
 
     // Editor support
