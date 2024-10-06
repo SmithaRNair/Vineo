@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import * as Yup from 'yup';
 
-import { useLoginMutation } from './apiSlice'; // Use the mutation from Redux
+import { useLoginMutation } from '../../../../../redux/apiSlice'; // Use the mutation from Redux
 
 const LoginPage = () => {
   const [login, { isLoading, isError }] = useLoginMutation();
@@ -55,20 +55,20 @@ const LoginPage = () => {
 
       <div className="flex h-screen w-full items-center justify-center md:justify-end">
         <div className="mx-4 mt-10 w-full max-w-md rounded-xl bg-white/0 p-8 shadow-xl md:mr-20 md:w-max">
-          <h2 className="mb-4 text-center text-2xl font-bold">Welcome to Vineo</h2>
-          <p className="mb-6 text-center">Login</p>
+          <div className="font-inter mb-4 whitespace-nowrap text-center text-2xl font-bold ">Welcome to Vineo</div>
+          <div className="font-inter text-40 mb-6 text-center text-20px font-medium">Login</div>
 
           <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
             {() => (
               <Form>
                 <div className="mb-4">
-                  <label htmlFor="email" className="block text-gray-700">Email</label>
+                  <label htmlFor="email" className="font-inter block text-gray-700">Email</label>
                   <Field type="email" name="email" className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300" required />
                   <ErrorMessage name="email" component="div" className="text-red-500" />
                 </div>
 
                 <div className="relative mb-4">
-                  <label htmlFor="password" className="block text-gray-700">Password</label>
+                  <label htmlFor="password" className="font-inter block text-gray-700">Password</label>
                   <Field
                     type={showPassword ? 'text' : 'password'} // Toggle password type here
                     name="password"
@@ -107,17 +107,17 @@ const LoginPage = () => {
                     className="size-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                   />
 
-                  <label htmlFor="rememberMe" className="inline-flex items-center">
+                  <label htmlFor="rememberMe" className="font-inter inline-flex items-center ">
                     <span className="ml-2 text-gray-700">Remember me</span>
                   </label>
 
-                  <Link href="#" className="ml-5 text-sm text-gray-600 hover:text-gray-900">Have you forgotten your password?</Link>
+                  <Link href="#" className="font-inter ml-5 text-sm text-gray-600 hover:text-gray-900">Have you forgotten your password?</Link>
                 </div>
 
-                <button type="submit" className="w-full rounded-lg bg-[#F78A79] px-4 py-2 font-bold text-white transition hover:bg-red-600">
+                <button type="submit" className="font-inter w-full rounded-lg bg-[#F78A79] px-4 py-2 font-bold text-white transition hover:bg-red-400">
                   {isLoading ? 'Logging in...' : 'Login'}
                 </button>
-                {isError && <div className="mt-2 text-red-500">Login failed. Please try again.</div>}
+                {isError && <div className=" mt-2 text-red-500">Login failed. Please try again.</div>}
 
                 <button type="button" className="mt-4 flex w-full items-center justify-center rounded-lg px-4 py-2 transition hover:bg-gray-300">
                   <Image

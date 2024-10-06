@@ -1,8 +1,9 @@
 // src/store.ts
 
 import { configureStore } from '@reduxjs/toolkit';
+
 // Adjust the path to where your apiSlice.ts is located
-import { authApi } from '@sign-in/apiSlice';
+import { authApi } from '@/app/redux/apiSlice';
 
 const store = configureStore({
   reducer: {
