@@ -1,11 +1,10 @@
-// app/layout.tsx
+// // app/layout.tsx
 'use client';
-import '/src/styles/global.css'; // Assuming you have global styles
-
 import { Provider } from 'react-redux';
-import store from '@/app/redux/store'; // Adjust the path to your store configuration
+import { store } from '@app/redux/store';
+import '/src/styles/global.css'; 
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
@@ -16,3 +15,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
+// 'use client';
+// import '/src/styles/global.css'; // Assuming you have global styles
+
+// import { Provider } from 'react-redux';
+
+// import store from '@/app/redux/store'; // Adjust the path to your store configuration
+
+// export default function RootLayout({ children }: { children: React.ReactNode }) {
+//   return (
+//     <html lang="en">
+//       <body>
+//         <Provider store={store}>
+//           {children}
+//         </Provider>
+//       </body>
+//     </html>
+//   );
+// }

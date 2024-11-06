@@ -1,0 +1,16 @@
+export const IMAGES = {
+  logo: '/images/logo.png',
+  glassBottle: '/images/glass-bottle.png',
+  eyeIcon: '/images/eye.png',
+  googleIcon: '/images/google.png',
+  ajust: '/images/ajust.png',
+  bib: '/images/bib.png',
+  chart: '/images/chart.png',
+  circle: '/images/circle.png',
+  coins: '/images/coins.png',
+  home: '/images/home.png',
+  signout: '/images/signout.png',
+  star: '/images/star.png',
+  hist: '/images/hist.png',
+  user: '/images/users.png',
+};
