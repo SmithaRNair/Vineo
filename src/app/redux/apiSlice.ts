@@ -43,10 +43,24 @@ const BOX_HISTORY_QUERY = `
   }
 `;
 
+/*const GET_SUBSCRIPTION_STATUS_MUTATION = `
+  mutation getSubscriptionStatus {
+    getSubscriptionStatus {
+      status
+    }
+  }
+`;*/
 const GET_SUBSCRIPTION_STATUS_MUTATION = `
   mutation getSubscriptionStatus {
     getSubscriptionStatus {
       status
+      subscription_id
+      type
+      start_date
+      end_date
+      credit_balance
+      number_of_boxes
+      is_recommended_polling
     }
   }
 `;
@@ -202,7 +216,7 @@ export const authApi = createApi({
       },
     }),
 
-    getSubscriptionStatus: builder.mutation({
+    /*getSubscriptionStatus: builder.mutation({
       query: () => ({
         url: '/graphql',
         method: 'POST',
@@ -217,7 +231,27 @@ export const authApi = createApi({
           console.error('Error fetching subscription status:', error);
         }
       },
+    }),*/
+
+    getSubscriptionStatus: builder.mutation({
+      query: () => ({
+        url: '/graphql',
+        method: 'POST',
+        body: {
+          query: GET_SUBSCRIPTION_STATUS_MUTATION,
+        },
+      }),
+      transformResponse: (response) => response.data.getSubscriptionStatus,
+      async onQueryStarted(arg, { queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled;
+          console.log('Subscription Status:', data);
+        } catch (error) {
+          console.error('Error fetching subscription status:', error);
+        }
+      },
     }),
+
 
     getBoxHistoryAdmin: builder.query({
       query: ({ searchString, page, pageSize }) => ({

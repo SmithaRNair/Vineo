@@ -1,8 +1,8 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Sidebar from 'src/components/Sidebar';
 import SubscriptionCard from 'src/components/SubscriptionCard';
-import { useLoadSubscriptionListForUserQuery } from 'src/app/redux/apiSlice';
+import { useLoadSubscriptionListForUserQuery, useGetSubscriptionStatusMutation } from 'src/app/redux/apiSlice';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -11,6 +11,26 @@ import { Navigation, Pagination } from 'swiper';
 
 const SubscriptionPage = () => {
   const { data: subscriptionPlans = [], error, isLoading } = useLoadSubscriptionListForUserQuery([10, 40, 30]);
+  const [getSubscriptionStatus] = useGetSubscriptionStatusMutation();
+  const [activeSubscriptionType, setActiveSubscriptionType] = useState(null);
+
+  // Fetch the active subscription status on mount
+  useEffect(() => {
+    const fetchSubscriptionStatus = async () => {
+      try {
+        const result = await getSubscriptionStatus().unwrap();
+        console.log(result.type);
+        if (result) {
+          console.log(result);
+          setActiveSubscriptionType(result.type);
+        }
+      } catch (error) {
+        console.error('Error fetching subscription status:', error);
+      }
+    };
+
+    fetchSubscriptionStatus();
+  }, [getSubscriptionStatus]);
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error loading subscription plans</p>;
@@ -56,7 +76,7 @@ const SubscriptionPage = () => {
                     description={plan.description}
                     perks={[plan.sub_title]}
                     renewalText={plan.duration ? `Renueva el ${plan.duration}` : null}
-                    isHighlighted={plan.is_current}
+                    isHighlighted={plan.type === activeSubscriptionType}
                   />
                 </div>
               </SwiperSlide>
