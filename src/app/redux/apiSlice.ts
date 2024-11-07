@@ -65,6 +65,27 @@ const GET_BOX_WINE_PRINT_CARD_QUERY = `
   }
 `;
 
+const LOAD_SUBSCRIPTION_LIST_QUERY = `
+  query loadSubscriptionListForUser($type: [Float!]!) {
+    loadSubscriptionListForUser(type: $type) {
+      _id
+      title
+      sub_title
+      amount
+      description
+      is_early_adaptor
+      display_order
+      payment_link
+      product_id
+      duration
+      type
+      status
+      is_current
+    }
+  }
+`;
+
+
 // Function to handle token refresh
 const baseQueryWithReauth = async (args, api, extraOptions) => {
   let result = await fetchBaseQuery({
@@ -101,16 +122,17 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
         },
       })({}, api, extraOptions); // Empty `args` for refresh query as it’s a separate request
 
+      console.log('Refresh result:', refreshResult.data.data);
       if (refreshResult?.data) {
-        const newAccessToken = refreshResult.data.getAccessToken.accessToken;
-        const newRefreshToken = refreshResult.data.getAccessToken.refreshToken;
+        const newAccessToken = refreshResult.data.data.getAccessToken.accessToken;
+        const newRefreshToken = refreshResult.data.data.getAccessToken.refreshToken;
 
         // Store new tokens in local storage
         localStorage.setItem('accessToken', newAccessToken);
         localStorage.setItem('refreshToken', newRefreshToken);
 
         console.log('Token refreshed. Retrying original request...');
-
+        
         // Retry the original query with new token
         result = await fetchBaseQuery({
           baseUrl: apiUrl,
@@ -259,6 +281,18 @@ export const authApi = createApi({
       }),
       transformResponse: (response) => response.data.getBoxWinePrintCard,
     }),
+
+    loadSubscriptionListForUser: builder.query({
+      query: (type) => ({
+        url: '/graphql',
+        method: 'POST',
+        body: {
+          query: LOAD_SUBSCRIPTION_LIST_QUERY,
+          variables: { type },
+        },
+      }),
+      transformResponse: (response) => response.data.loadSubscriptionListForUser,
+    }),
     
     
   }),
@@ -270,6 +304,7 @@ export const {
   useGetSubscriptionStatusMutation,
   useGetBoxHistoryAdminQuery,
   useGetBoxWinePrintCardQuery,
+  useLoadSubscriptionListForUserQuery,
 } = authApi;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 

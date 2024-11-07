@@ -1,4 +1,20 @@
 {
+  "history": {
+    
+      "Wine Box History": "Wine Box History",
+      "Search": "Search",
+      "User Details": "User Details",
+      "Wine in Box": "Wine in Box",
+      "Box Creation Date": "Box Creation Date",
+      "Box Delivery Date": "Box Delivery Date",
+      "Box Type": "Box Type",
+      "Status": "Status",
+      "Actions": "Actions",
+      "No data available": "No data available",
+      "Clients": "Clients"
+  
+  },  
+    
   "RootLayout": {
     "home_link": "Home",
     "about_link": "About",
