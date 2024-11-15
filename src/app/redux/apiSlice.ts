@@ -99,6 +99,13 @@ const LOAD_SUBSCRIPTION_LIST_QUERY = `
   }
 `;
 
+const LATEST_GIFTS_QUERY = `
+  query LatestGiftsofUser {
+    getLatestUserGift
+  }
+`;
+
+
 
 // Function to handle token refresh
 const baseQueryWithReauth = async (args, api, extraOptions) => {
@@ -327,8 +334,18 @@ export const authApi = createApi({
       }),
       transformResponse: (response) => response.data.loadSubscriptionListForUser,
     }),
-    
-    
+
+    getLatestUserGift: builder.query({
+      query: () => ({
+        url: '/graphql',
+        method: 'POST',
+        body: {
+          query: LATEST_GIFTS_QUERY,
+        },
+      }),
+      transformResponse: (response) => response.data.getLatestUserGift,
+    }),
+     
   }),
 });
 
@@ -339,6 +356,7 @@ export const {
   useGetBoxHistoryAdminQuery,
   useGetBoxWinePrintCardQuery,
   useLoadSubscriptionListForUserQuery,
+  useGetLatestUserGiftQuery,
 } = authApi;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 

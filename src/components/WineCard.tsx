@@ -30,7 +30,7 @@ const renderStars = (rating: number) => {
 };
 
 const WineCard = ({ wine }: { wine: Wine }) => (
-  <div className="wine-item flex min-w-[160px] shrink-0 flex-col items-center space-x-6">
+  <div className="wine-item flex  shrink-0 flex-col items-center space-x-6">
     <Image
       src={wine.image}
       alt={wine.wine_name}
@@ -40,7 +40,7 @@ const WineCard = ({ wine }: { wine: Wine }) => (
       className="mb-2"
       
     />
-    //<div className="truncate text-lg font-inter font-medium text-vineopink lg:text-base  xl:text-base">
+    <div className="truncate text-lg font-inter font-medium text-vineopink lg:text-base  xl:text-base">
       {wine.wine_name}
     </div>
     <div className="truncate font-inter text-sm text-vineogray md:text-base">

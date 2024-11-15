@@ -28,7 +28,7 @@ const SubscriptionCard: React.FC<SubscriptionCardProps> = ({
       <div className="flex-1">
         {/* Card Header */}
         <div className={`rounded-t-lg py-2 ${isHighlighted ? 'bg-gray-800 text-white' : 'text-gray-800'}`}>
-          <h3 className="text-lg font-bold">{title}</h3>
+          <h3 className="text-lg font-bold ">{title}</h3>
         </div>
 
         {/* Price */}

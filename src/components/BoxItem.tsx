@@ -1,9 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper';
 
 import { IMAGES } from '@/constants/AppConst';
 import type { Box } from '@/types/BoxTypes';
@@ -11,68 +7,54 @@ import type { Box } from '@/types/BoxTypes';
 import CustomButton from './CustomButton';
 import WineCard from './WineCard';
 
+
 const BoxItem = ({ box }: { box: Box }) => (
-  <div className="box-item mb-4 flex flex-col rounded-lg border-2 border-gray-200 bg-white p-6 shadow-md md:mb-6">
-    <div className="mb-4 font-inter text-45px text-lg font-medium text-vineogray text-center">
-      {box.is_pending
-        ? 'Tu recomendación más reciente'
-        : `Tu caja de ${new Date(box.date).toLocaleString('es-ES', {
-          day: 'numeric',
-          month: 'long',
-          year: 'numeric',
-        })}`}
-    </div>
-    <div className="lg:flex lg:flex-col lg:justify-between">
-      <div className="relative bg-gray-50 lg:flex lg:flex-wrap lg:gap-x-2 lg:gap-y-4">
-        <Swiper
-          modules={[Pagination]}
-          spaceBetween={5}
-          slidesPerView={1} // Show one slide at a time
-          pagination={{
-            clickable: true,
-            el: '.custom-pagination', // Custom element for pagination
-          }}
-          loop={false} // Disable looping
-          allowTouchMove={true} // Enable swipe
-          breakpoints={{
-            1024: {
-              slidesPerView: 3, // Show 3 slides on larger screens
-              allowTouchMove: false, // Disable swipe on larger screens
-              pagination: false, // Hide pagination for larger screens
-            },
-            320: {
-              slidesPerView: 1, // Show 1 slide on smaller screens
-              allowTouchMove: true, // Enable swipe for smaller screens
-              pagination: { clickable: true }, // Show pagination
-            },
-          }}
-          style={{ maxWidth: '100%', margin: '0 auto' }}
-        >
-          {box.wines.map((wine) => (
-            <SwiperSlide key={wine.wine_id} className="mb-4 lg:mb-0 w-full">
-              <WineCard wine={wine} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className="custom-pagination mt-4 flex justify-center absolute bottom-4 w-full"></div> {/* Custom pagination */}
+  <div className="flex flex-col items-center w-full lg:w-4/5">
+    <div className="w-full box-item mb-4 rounded-lg border-2 border-gray-200 bg-white p-10 shadow-md">
+      <div className="mb-4 font-inter text-lg font-medium text-vineogray text-left">
+        {box.is_pending
+          ? 'Tu recomendación más reciente'
+          : `Tu caja de ${new Date(box.date).toLocaleString('es-ES', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+            })}`}
       </div>
-      <div className="mt-6 flex items-center justify-center rounded-lg bg-white p-4 shadow-md lg:mt-8">
-        <div>
-          <div className="mb-2 font-inter text-sm font-semibold sm:mb-4 sm:text-lg">Análisis de Vinos</div>
-          <Image
-            src={IMAGES.chart}
-            alt="Radar Graph"
-            width={300}
-            height={200}
-            className="sm:w-[300px]"
-          />
+
+      {/* Main container for wines and chart with full width */}
+      <div className="ml-10 flex flex-col lg:flex-row lg:justify-between items-start w-full">
+        
+        {/* Wine Box Container */}
+        <div className="flex gap-4 p-4 rounded-lg border border-gray-200 bg-white shadow-md w-2/3 overflow-x-auto">
+          {box.wines.map((wine) => (
+            <div key={wine.wine_id} className="min-w-[160px]">
+              <WineCard wine={wine} />
+            </div>
+          ))}
+        </div>
+
+        {/* Right Side: Chart */}
+        <div className="mt-6 lg:mt-0 lg:ml-4 w-1/3">
+          <div className="rounded-lg bg-white p-4 shadow-md w-full h-full">
+            <div className="mb-2 font-inter text-sm font-semibold text-center">Análisis de Vinos</div>
+            <Image
+              src={IMAGES.chart}
+              alt="Radar Graph"
+              width={300}
+              height={200}
+              className="w-full h-auto"
+            />
+          </div>
         </div>
       </div>
-    </div>
-    <div className="mt-6 flex w-full justify-center">
-      <CustomButton label="¡Envíame esta caja a casa!" onClick={() => alert('Sending box!')} />
+
+      <div className="mt-6 flex w-full justify-center">
+        <CustomButton label="¡Envíame esta caja a casa!" onClick={() => alert('Sending box!')} />
+      </div>
     </div>
   </div>
 );
+
+
 
 export default BoxItem;

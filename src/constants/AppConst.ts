@@ -13,4 +13,13 @@ export const IMAGES = {
   star: '/images/star.png',
   hist: '/images/hist.png',
   user: '/images/users.png',
+  vineoil:'/images/VINEO_IL.png',
+  bottle:'/images/bottle.png',
+  answer:'/images/answer.png',
+  winebox:'/images/bottlebox.png',
+  boxgif:'/images/boxgif.png',
+  graph:'/images/graph.png',
+  bottleimg:'/images/bottleimage 1.png',
+  bottleglass:'/images/bottle&glass.png',
+  
 };

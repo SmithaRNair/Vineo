@@ -4,8 +4,8 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { DemoBanner } from '@/components/DemoBanner';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
-import { BaseTemplate } from '@/templates/BaseTemplate';
-
+//import { BaseTemplate } from '@/templates/BaseTemplate';
+import { Header } from "@/components/organisms/Header";
 export default function Layout(props: {
   children: React.ReactNode;
   params: { locale: string };
@@ -15,8 +15,8 @@ export default function Layout(props: {
 
   return (
     <>
-      <DemoBanner />
-      <BaseTemplate
+      <Header />
+      {/* <BaseTemplate
         leftNav={(
           <>
             <li>
@@ -88,7 +88,8 @@ export default function Layout(props: {
         )}
       >
         <div className="py-5 text-xl [&_p]:my-6">{props.children}</div>
-      </BaseTemplate>
+      </BaseTemplate> */}
+      <div >{props.children}</div>
     </>
   );
 }
