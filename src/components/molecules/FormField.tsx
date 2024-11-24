@@ -12,7 +12,7 @@ interface FormFieldProps {
 
 const FormField = ({ name, type, label, placeholder, password }: FormFieldProps) => (
   <div className="relative mb-4">
-    <label htmlFor={name} className="block font-inter text-gray-700">{label}</label>
+    <label htmlFor={name} className="block font-inter font-medium text-vineogray">{label}</label>
     {password ? (
       <PasswordInput
         name={name}

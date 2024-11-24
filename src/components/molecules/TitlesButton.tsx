@@ -2,23 +2,24 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 
-interface TextButtonProps {
+interface TitlesButtonProps {
   title: string;
-  paragraphs: string[]; // Array of paragraphs to handle varying amounts of content
+  subtitle: string;
+  paragraphs: string[];
   buttonText: string;
-  buttonLink: string; // Link for the button, used for navigation
-  reverseLayout?: boolean; // Optional flag to reverse the layout
-  showButton?: boolean; // Flag to control visibility of the button
+  buttonLink: string;
+  reverseLayout?: boolean;
+  showButton?: boolean;
 }
 
-const TextButton: React.FC<TextButtonProps> = ({
+const TitlesButton: React.FC<TitlesButtonProps> = ({
   title,
   subtitle,
   paragraphs,
   buttonText,
   buttonLink,
   reverseLayout = false,
-  showButton = true, // Default to true if not provided
+  showButton = true,
 }) => {
   const router = useRouter();
 
@@ -34,17 +35,27 @@ const TextButton: React.FC<TextButtonProps> = ({
       {/* Dark overlay for text visibility */}
       <div className="absolute inset-0"></div>
 
-      <div className="relative  z-10 max-w-4xl text-white px-6 md:px-12">
-        <h2 className="text-3xl font-semibold text-[#394A59] mb-6" style={{ fontFamily: 'Domine, serif' }}>
+      <div className="relative z-10 max-w-4xl text-white px-6 md:px-12">
+        {/* Title with vineogray color and custom Tailwind typography classes */}
+        <h2
+          className="font-domine text-45px font-normal leading-[51.3px] text-left mb-6 text-vineogray"
+        >
           {title}
         </h2>
-        <h2 className="text-xl font-semibold text-[#394A59] mb-6" style={{ fontFamily: 'Domine, serif' }}>
+
+        {/* Subtitle with bold style */}
+        <h3
+          className="font-domine text-45px font-bold leading-[51.3px] text-left mb-6 text-vineogray"
+        >
           {subtitle}
-        </h2>
-        
-        {/* Loop through paragraphs */}
+        </h3>
+
+        {/* Loop through paragraphs with custom color */}
         {paragraphs.map((paragraph, index) => (
-          <p key={index} className="text-lg font-normal text-[#18191A] mb-4">
+          <p
+            key={index}
+            className="font-domine text-32px font-normal leading-[36.48px] text-left  mb-4 text-[#18191A]"
+          >
             {paragraph}
           </p>
         ))}
@@ -63,4 +74,4 @@ const TextButton: React.FC<TextButtonProps> = ({
   );
 };
 
-export default TextButton;
+export default TitlesButton;

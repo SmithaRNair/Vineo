@@ -1,14 +1,14 @@
 // components/SubscriptionSection.tsx
 'use client';
 import React from 'react';
-import TextButton from '../molecules/TextButton';
+import TitlesButton from '../molecules/TitlesButton';
 import SubscriptionCard from '../SubscriptionCard';
 
 const SubscriptionSection: React.FC = () => {
   return (
     <div>
       {/* First part - Using TextButton component for introductory text */}
-      <TextButton
+      <TitlesButton
         title="Elige el precio que mejor se adapte a ti"
         subtitle="Podrás cambiar tu suscripción en cualquier momento"
         paragraphs={[

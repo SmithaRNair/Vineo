@@ -1,45 +1,47 @@
-"use client"; // Marking as client-side component
+'use client'; // Marking as client-side component
 
-import React from "react";
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'; // Import the WhatsApp icon
+import IconButton from '@mui/material/IconButton';
 import { useRouter } from 'next/navigation';
-import { Button } from "../atoms/Button"; // Importing the Button from the atoms folder
-import IconButton from "@mui/material/IconButton";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp"; // Import the WhatsApp icon
-import { BorderColor, Padding } from "@mui/icons-material";
+import React from 'react';
+
+import { Button } from '../atoms/Button'; // Importing the Button from the atoms folder
 
 export const Header = () => {
   const router = useRouter(); // Initialize useRouter hook
 
   const handleBeginClick = () => {
-    router.push("/sign-in"); // Navigate to the sign-in page
+    router.push('/question'); // Navigate to the sign-in page
   };
 
   return (
-    <header className="sticky top-0 z-50 flex justify-between items-center p-4  bg-slate-600 text-white w-full">
+    <nav className="sticky top-0 z-50 flex w-full items-center justify-between bg-custom-gradient p-4 text-white">
       {/* Vineo Logo */}
       <div className="flex items-center">
         <img src="/images/logo.png" alt="Vineo Logo" className="w-32" />
       </div>
 
       {/* Buttons */}
-      <div className="flex space-x-4 bg-transparent ml-auto">
+      <div className="ml-auto flex space-x-4 bg-transparent">
         {/* First Button: "Give Vineo as a Gift" */}
         <Button
-    text="Give Vineo as a Gift"
-    onClick={() => console.log("Gift clicked")}
-    variant="outlined" // Use 'outlined' for transparent background
-    color="default" // Default for outlined
-    sx={{
-      textTransform: "none", 
-      padding: "10px 20px", 
-      color: "#F78A79", // Orange text color
-      backgroundColor: "transparent", // Transparent background
-      '&:hover': {
-        backgroundColor: "transparent", // Keep transparent on hover
-        borderColor: "#F25D54", // Slightly darker border on hover
-      },
-    }}
-  />
+          text="Give Vineo as a Gift"
+          onClick={() => console.log('Gift clicked')}
+          variant="outlined" // Use 'outlined' for transparent background
+          color="default" // Default for outlined
+          
+          sx={{
+            'textTransform': 'none',
+            'padding': '10px 30px',
+            'width':'200px',
+            'color': '#F78A79', // Orange text color
+            'backgroundColor': 'transparent', // Transparent background
+            '&:hover': {
+              backgroundColor: 'transparent', // Keep transparent on hover
+              borderColor: '#F25D54', // Slightly darker border on hover
+            },
+          }}
+        />
 
         {/* Second Button: "Begin" */}
         <Button
@@ -48,7 +50,7 @@ export const Header = () => {
           variant="contained"
           color="orange"
           sx={{
-            Padding: "10px "
+            Padding: '10px ',
           }}
 
         />
@@ -56,12 +58,13 @@ export const Header = () => {
         {/* Third Button: "Access" */}
         <Button
           text="Access"
-          onClick={() => console.log("Access clicked")}
+          onClick={() => console.log('Access clicked')}
           variant="outlined"
           color="secondary"
           sx={{
-            backgroundColor: "transparent",
-            borderColor : "#F78A79"          }}
+            backgroundColor: 'transparent',
+            borderColor: '#F78A79',
+          }}
         />
       </div>
 
@@ -71,14 +74,12 @@ export const Header = () => {
           className="bg-green-500 hover:bg-green-600"
           aria-label="WhatsApp"
         >
-          <WhatsAppIcon style={{ color: "white" }} />
+          <WhatsAppIcon style={{ color: 'white' }} />
         </IconButton>
       </a>
-    </header>
+    </nav>
   );
 };
-
-
 
 // import React from "react";
 // import { Button } from "../atoms/Button"; // Import the custom Button component

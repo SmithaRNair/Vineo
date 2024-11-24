@@ -20,3 +20,20 @@ const Input: React.FC<InputProps> = ({ placeholder = 'Enter email', value, onCha
 };
 
 export default Input;
+// // components/atoms/Input.tsx
+// import React from 'react';
+
+// interface InputProps {
+//   placeholder: string;
+//   type: string;
+// }
+
+// const Input: React.FC<InputProps> = ({ placeholder, type }) => (
+//   <input
+//     type={type}
+//     placeholder={placeholder}
+//     className="border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-orange-500"
+//   />
+// );
+
+// export default Input;

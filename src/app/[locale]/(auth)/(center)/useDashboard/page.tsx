@@ -26,17 +26,15 @@ const UserDashboard = () => {
 
   return (
     <SmoothScrolling>
-      <div className="flex min-h-screen bg-gray-100">
-        
-        <main className="flex-1 p-4 bg-gray-100 md:ml-64 md:p-8">
-          <BoxList items={items} />
+      <div className="flex  min-h-screen   bg-gray-100">
+        <BoxList items={items} />
           {isLoading && hasMore && (
             <div className="mt-6 flex justify-center md:mt-8">
               <div className="loader">Cargando más...</div>
             </div>
           )}
           <InfiniteScrollObserver onLoadMore={fetchNextPage} hasMore={hasMore} isLoading={isLoading} />
-        </main>
+       
       </div>
     </SmoothScrolling>
   );

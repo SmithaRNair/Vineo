@@ -1,13 +1,13 @@
 // pages/LandingPage.tsx
 'use client';
 import React from 'react';
-import TextButton from '../molecules/TextButton';
+import TitlesButton from '../molecules/TitlesButton';
 
 const BottleGlass: React.FC = () => {
   return (
     <div>
       {/* Section 1 */}
-      <TextButton
+      <TitlesButton
         title="Sube de nivel con cada caja"
         paragraphs={[
           "Invita a amigos, valora tus vinos y accede a descuentos y ventajas únicas con tus Vineo Coins"
@@ -19,7 +19,7 @@ const BottleGlass: React.FC = () => {
       />
       
       {/* Section 2 */}
-      <TextButton
+      <TitlesButton
         title="Tus Beneficios"
         subtitle="Vineo Coins"
         paragraphs={[

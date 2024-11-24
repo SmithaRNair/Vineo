@@ -24,20 +24,20 @@ export const InputButton: React.FC<InputButtonProps> = ({
   };
 
   return (
-    <div className="flex items-center w-full max-w-md">
+    <div className="relative w-full max-w-md">
       {/* Input Field */}
       <input
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className={`p-3 border-2 border-gray-300 rounded-l-lg ${inputWidth} ${inputHeight} pr-4`} // Add padding-right for space for the button
+        className={`p-3 border-2 border-gray-300 rounded-xl ${inputWidth} ${inputHeight} pr-12`} // Added full border-radius for rounded input
         placeholder="email"
       />
       
-      {/* Button */}
+      {/* Button inside the input box */}
       <button
         onClick={handleSubmit}
-        className={`bg-vineopink text-white py-2 px-6 rounded-r-lg ${buttonWidth}`}
+        className={`absolute right-0 top-0 bg-[#FF6F61] h-9 m-2 text-white py-2 px-4 rounded-xl ${buttonWidth} h-full`}
       >
         {buttonText}
       </button>

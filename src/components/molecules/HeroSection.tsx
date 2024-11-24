@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
-import TextButton from './TextButton'; // Import TextButton component
+
+import TitlesButton from './TitlesButton';
 
 export const HeroSection = () => {
   const handleButtonClick = () => {
@@ -9,22 +10,30 @@ export const HeroSection = () => {
   };
 
   return (
-    <div className="relative bg-cover bg-center bg-no-repeat  h-screen bg-wines bg-70p">
-      <div className="absolute flex  bg-white items-left justify-center">
-        <div className="text-left text-white ">
-          <h1 className="text-3xl font-bold text-black mb-4">Descubre el vino perfecto para ti</h1>
-          <div className="flex w-1/2 bg-transparent items-start">
-            <TextButton
-              subtitle="Únete a Vineo, haz match con vinos que encajan con tus gustos gracias a nuestras recomendaciones personalizadas"
-              paragraphs={[
-                "Sorpréndete con nuevos sabores y experiencias inolvidables",
-              ]}
-              buttonText="Empezar"
-              buttonLink="#start" // Provide the link or route for the button action
-              reverseLayout={false} // Set to true if you want to reverse the layout
-              showButton={true} // Ensure the button is shown
-            />
-          </div>  
+    <div className="relative h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/wines.png)' }}>
+      <div className="absolute inset-0 bg-black opacity-0"></div>
+      <div className="relative z-10 flex h-full items-center px-12">
+        {/* Adjusted alignment styles */}
+        <div className="max-w-md space-y-6">
+          <div className="absolute top-0 left-0 right-0 p-12">
+            <h1 className="text-3xl font-bold text-vineogray">
+              Descubre el vino perfecto para ti
+            </h1>
+          </div>
+          <TitlesButton
+             
+            subtitle="Únete a Vineo, haz match con vinos que encajan con tus gustos gracias a nuestras recomendaciones personalizadas"
+           
+            paragraphs={['Sorpréndete con nuevos sabores y experiencias inolvidables']}
+            buttonText="Empezar"
+            buttonLink="#start" // Provide the link or route for the button action
+            reverseLayout={false} // Set to true if you want to reverse the layout
+            showButton={true} // Ensure the button is shown
+            className="text-left mt-8 ml-12"
+            subtitleClassName="text-xl font-domine font-bold text-vineogray" // Tailwind CSS classes for subtitle
+            paragraphClassName="text-lg font-medium text-vineogray" // Tailwind CSS classes for paragraphs
+
+          />
         </div>
       </div>
     </div>

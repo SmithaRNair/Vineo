@@ -1,11 +1,26 @@
 
-import { LandingPage } from "@/components/organisms/LandingPage";
+import { HeroSection } from "@/components/molecules/HeroSection";
+import SecondSection from "@/components/organisms/SecondSection";
+import ThirdSection from "@/components/organisms/ThirdSection";
+import FourthSection from "@/components/organisms/FourthSection";
+import BottleGlass from "@/components/organisms/BottleGlass";
+import SubscriptionSection from "@/components/organisms/SubscriptionSection";
+import FaqSection from "@/components/organisms/FaqSection";
+import NewsletterSection from "@/components/organisms/NewsletterSection";
+import Footer from "@/components/organisms/Footer";
 
 const Home = () => {
   return (
     <div>
-      
-      <LandingPage />
+      <HeroSection />
+      <SecondSection />
+      <ThirdSection />
+      <FourthSection />
+      <BottleGlass />
+      <SubscriptionSection />
+      <FaqSection />
+      <NewsletterSection />
+      <Footer />
     </div>
   );
 };

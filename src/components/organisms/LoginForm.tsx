@@ -1,13 +1,15 @@
 // src/components/organisms/LoginForm.tsx
 'use client';
 import { Form, Formik } from 'formik';
-import * as Yup from 'yup';
-import { useLogin } from '@/hooks/useLogin';
-import FormField from '../molecules/FormField';
-import Checkbox from '../atoms/Checkbox';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import * as Yup from 'yup';
+
+import { useLogin } from '@/hooks/useLogin';
+
+import Checkbox from '../atoms/Checkbox';
+import FormField from '../molecules/FormField';
 
 const LoginForm = () => {
   const { login, isLoading, isError } = useLogin();
@@ -35,12 +37,24 @@ const LoginForm = () => {
     <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
       {() => (
         <Form>
-          <FormField name="email" type="email" label="Email" placeholder="Enter your email" />
-          <FormField name="password" type="password" label="Password" placeholder="Enter your password" password />
-          
-          <div className="flex items-center justify-between mb-4">
+          <FormField
+            name="email"
+            type="email"
+            label="Email"
+            placeholder="Enter your email"
+            className="h-[97px] w-[894px] rounded-lg border px-4 py-2 text-sm"
+          />
+          <FormField
+            name="password"
+            type="password"
+            label="Password"
+            placeholder="Enter your password"
+            password
+            className="h-[97px] w-[894px] rounded-lg border px-4 py-2 text-sm"
+          />
+          <div className="mb-4 flex items-center justify-between font-inter font-medium text-logingray">
             <Checkbox name="rememberMe" label="Remember me" />
-            <Link href="#" className="font-inter text-sm text-gray-600 hover:text-gray-900">
+            <Link href="#" className="font-inter text-sm font-medium text-logingray hover:text-gray-900">
               Have you forgotten your password?
             </Link>
           </div>
@@ -50,13 +64,13 @@ const LoginForm = () => {
           </button>
           {isError && <div className="mt-2 text-red-500">Login failed. Please try again.</div>}
           <button type="button" className="mt-4 flex w-full items-center justify-center rounded-lg px-4 py-2 transition hover:bg-gray-300">
-                  <Image
-                     src="/images/google.png"
-                     alt="Google"
-                     width={50}
-                     height={50}
-                    className="mr-2"
-                  />
+            <Image
+              src="/images/google.png"
+              alt="Google"
+              width={50}
+              height={50}
+              className="mr-2"
+            />
           </button>
         </Form>
       )}

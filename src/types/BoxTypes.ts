@@ -21,3 +21,4 @@ export type Wine = {
   store: string;
   likeness: string;
 };
+
