@@ -18,6 +18,7 @@ const SubscriptionCard: React.FC<SubscriptionCardProps> = ({
   perks = [],
   renewalText,
   isHighlighted = false,
+  buttonText = 'Cambiar',
 }) => {
   return (
     <div
@@ -60,7 +61,7 @@ const SubscriptionCard: React.FC<SubscriptionCardProps> = ({
       {/* Change button, hidden for highlighted card */}
       {!isHighlighted && (
         <button className="mt-auto w-full rounded-md bg-gray-700 px-4 py-2 text-white">
-          Cambiar
+          {buttonText}
         </button>
       )}
     </div>

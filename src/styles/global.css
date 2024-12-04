@@ -48,3 +48,52 @@ scrollbar-color: #888 #f1f1f1; /* thumb color and track color */
   font-weight: 700; /* Bold */
   src: url('/assets/fonts/Inter_28pt-Bold.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Domine';
+  font-style: Normal;
+  font-weight: 400; /* Regular */
+  src: url('/assets/fonts/Domine-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Domine';
+  font-style: Bold;
+  font-weight: 700; /* Regular */
+  src: url('/assets/fonts/Domine-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Domine';
+  font-style: Medium;
+  font-weight: 500; /* Regular */
+  src: url('/assets/fonts/Domine-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Playfair';
+  font-style: Medium;
+  font-weight: 500; /* Regular */
+  src: url('/assets/fonts/PlayfairDisplay-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: Bold;
+  font-weight: 600; /* Regular */
+  src: url('/assets/fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: Regular;
+  font-weight: 300; /* Regular */
+  src: url('/assets/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: Bold;
+  font-weight: 600; /* Regular */
+  src: url('/assets/fonts/Lato-Bold.ttf') format('truetype');
+}
+/* Active Bullet Color */
+@swiper-pagination-bullet-active {
+  background-color: VineoPink; /* Slightly darker shade of VineoPink */
+}
+* {
+  font-family: 'Domine', 'Inter', 'Lato';
+}

@@ -13,18 +13,18 @@ export const IconTextCard = ({
   description,
 }: IconTextCardProps) => {
   return (
-    <div className="bg-white mt-10 p-6 rounded-lg shadow-md max-w-xs mx-auto text-center flex flex-col justify-center items-center">
-      {/* Icon placed within the top border */}
-      <div className="w-full flex justify-center -mt-10">
-        <img
-          src={iconSrc}
-          alt="icon"
-          className="h-20 w-20 rounded-full -mt-6"
-        />
-      </div>
-      {/* Card content */}
-      <h3 className="text-xl font-semibold text-[#4A4A4A] mt-4">{title}</h3>
-      <p className="text-md text-[#6A6A6A]">{description}</p>
-    </div>
+    <div className="bg-white mt-10 p-4 rounded-lg shadow-xl text-center flex flex-col justify-center items-center max-w-xs relative"> 
+  {/* Icon placed within the top center with slight overlap */}
+  <div className="absolute top-0 left-0 right-0 flex justify-center">
+    <img
+      src={iconSrc}
+      alt="icon"
+      className="h-24 w-24 rounded-full -mt-12" /> {/* Adjusted size and margin */}
+  </div>
+  {/* Card content */}
+  <h3 className="text-xl font-bold text-vineogray mt-10">{title}</h3> {/* Adjusted margin to give space below the icon */}
+  <p className="text-md font-normal text-vineoblack mt-4">{description}</p> {/* Adjusted margin for the description */}
+</div>
+
   );
 };

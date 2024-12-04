@@ -1,8 +1,8 @@
 'use client';
-import React from 'react';
 import { useRouter } from 'next/navigation';
+import React from 'react';
 
-interface TitlesButtonProps {
+type TitlesButtonProps = {
   title: string;
   subtitle: string;
   paragraphs: string[];
@@ -10,7 +10,8 @@ interface TitlesButtonProps {
   buttonLink: string;
   reverseLayout?: boolean;
   showButton?: boolean;
-}
+  paragraphClassNames?: string[];
+};
 
 const TitlesButton: React.FC<TitlesButtonProps> = ({
   title,
@@ -20,6 +21,7 @@ const TitlesButton: React.FC<TitlesButtonProps> = ({
   buttonLink,
   reverseLayout = false,
   showButton = true,
+  paragraphClassNames = [],
 }) => {
   const router = useRouter();
 
@@ -30,31 +32,31 @@ const TitlesButton: React.FC<TitlesButtonProps> = ({
 
   return (
     <div
-      className={`relative py-12 ${reverseLayout ? 'flex-row-reverse' : 'flex-row'} flex items-center justify-center bg-cover bg-center`}
+      className={`relative py-1 ${reverseLayout ? 'flex-row-reverse' : 'flex-row'} flex bg-cover`}
     >
-      {/* Dark overlay for text visibility */}
-      <div className="absolute inset-0"></div>
-
-      <div className="relative z-10 max-w-4xl text-white px-6 md:px-12">
-        {/* Title with vineogray color and custom Tailwind typography classes */}
+      <div className="relative py-2 z-10 px-1  text-white md:px-2 ">
+        {/* Title with Figma font styles */}
         <h2
-          className="font-domine text-45px font-normal leading-[51.3px] text-left mb-6 text-vineogray"
+          className="font-Domine mb-6 text-left text-2xl font-bold  text-vineogray sm:text-2xl md:text-2xl lg:text-2xl"
+          
         >
           {title}
         </h2>
 
-        {/* Subtitle with bold style */}
+        {/* Subtitle with Figma font styles */}
         <h3
-          className="font-domine text-45px font-bold leading-[51.3px] text-left mb-6 text-vineogray"
+          className="font-Domine mb-6 text-left text-xl font-medium text-vineogray sm:text-xl md:text-2xl lg:text-2xl"
+         
         >
           {subtitle}
         </h3>
 
-        {/* Loop through paragraphs with custom color */}
+        {/* Loop through paragraphs with Figma font styles */}
         {paragraphs.map((paragraph, index) => (
           <p
             key={index}
-            className="font-domine text-32px font-normal leading-[36.48px] text-left  mb-4 text-[#18191A]"
+            className="font-Domine mb-7 text-lg font-normal text-vineoblack sm:text-lg  md:text-left md:text-xl lg:text-xl"
+            
           >
             {paragraph}
           </p>
@@ -64,7 +66,7 @@ const TitlesButton: React.FC<TitlesButtonProps> = ({
         {showButton && (
           <button
             onClick={handleButtonClick}
-            className="bg-vineopink text-white py-2 px-6 rounded-lg inline-block hover:bg-[#9c2b4b] transition"
+            className="inline-block rounded-lg bg-vineopink px-6 py-2 text-white transition hover:bg-[#9c2b4b]"
           >
             {buttonText}
           </button>

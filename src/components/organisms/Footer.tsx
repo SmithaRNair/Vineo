@@ -20,13 +20,13 @@ const Footer: React.FC = () => {
 
         {/* Social Media Section */}
         <div className="flex justify-center  mb-8">
-          <a href="https://wa.me/" target="_blank" className="bg-vineopink text-white hover:text-green-800 mx-2">
+          <a href="https://wa.me/" target="_blank" className="bg-vineopink rounded-full text-white hover:text-green-800 mx-2">
             <WhatsAppIcon size={24} />
           </a>
-          <a href="https://facebook.com" target="_blank" className="bg-vineopink text-white hover:text-blue-800 mx-2">
+          <a href="https://facebook.com" target="_blank" className="bg-white rounded-full  text-vineopink hover:text-blue-800 mx-2">
             <FaFacebook size={24} />
           </a>
-          <a href="https://instagram.com" target="_blank" className="bg-vineopink text-white hover:text-pink-800 mx-2">
+          <a href="https://instagram.com" target="_blank" className="bg-vineopink rounded- text-white hover:text-pink-800 mx-2">
             <FaInstagram size={24} />
           </a>
           

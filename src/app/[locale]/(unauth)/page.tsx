@@ -1,9 +1,10 @@
 
 import { HeroSection } from "@/components/molecules/HeroSection";
-import SecondSection from "@/components/organisms/SecondSection";
+import LandingSection from "@/components/organisms/LandingSection";
 import ThirdSection from "@/components/organisms/ThirdSection";
-import FourthSection from "@/components/organisms/FourthSection";
-import BottleGlass from "@/components/organisms/BottleGlass";
+import AlgoritmoSection from "@/components/organisms/AlgoritmoSection";
+import AprendizajeSection from "@/components/organisms/AprendizajeSection";
+import VineoCoinsSection from "@/components/organisms/VineoCoinsSection";
 import SubscriptionSection from "@/components/organisms/SubscriptionSection";
 import FaqSection from "@/components/organisms/FaqSection";
 import NewsletterSection from "@/components/organisms/NewsletterSection";
@@ -13,10 +14,11 @@ const Home = () => {
   return (
     <div>
       <HeroSection />
-      <SecondSection />
+      <LandingSection />
       <ThirdSection />
-      <FourthSection />
-      <BottleGlass />
+      <AlgoritmoSection />
+      <AprendizajeSection />
+      <VineoCoinsSection />
       <SubscriptionSection />
       <FaqSection />
       <NewsletterSection />

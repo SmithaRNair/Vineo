@@ -1,40 +1,33 @@
 'use client';
 import React from 'react';
-
-import TitlesButton from './TitlesButton';
+import TitlesButton from './TitlesButton'; // Adjust the import path as necessary
 
 export const HeroSection = () => {
-  const handleButtonClick = () => {
-    console.log('Start clicked');
-    // Add your logic for button click
-  };
-
   return (
-    <div className="relative h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/wines.png)' }}>
-      <div className="absolute inset-0 bg-black opacity-0"></div>
-      <div className="relative z-10 flex h-full items-center px-12">
-        {/* Adjusted alignment styles */}
-        <div className="max-w-md space-y-6">
-          <div className="absolute top-0 left-0 right-0 p-12">
-            <h1 className="text-3xl font-bold text-vineogray">
-              Descubre el vino perfecto para ti
-            </h1>
-          </div>
-          <TitlesButton
-             
-            subtitle="Únete a Vineo, haz match con vinos que encajan con tus gustos gracias a nuestras recomendaciones personalizadas"
-           
-            paragraphs={['Sorpréndete con nuevos sabores y experiencias inolvidables']}
-            buttonText="Empezar"
-            buttonLink="#start" // Provide the link or route for the button action
-            reverseLayout={false} // Set to true if you want to reverse the layout
-            showButton={true} // Ensure the button is shown
-            className="text-left mt-8 ml-12"
-            subtitleClassName="text-xl font-domine font-bold text-vineogray" // Tailwind CSS classes for subtitle
-            paragraphClassName="text-lg font-medium text-vineogray" // Tailwind CSS classes for paragraphs
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-wines bg-cover bg-center bg-no-repeat pl-6 sm:pl-6 md:pl-10 lg:pl-12 xl:pl-16">
 
-          />
-        </div>
+      {/* Main Text */}
+      <div className="absolute left-0 top-0 z-10 mb-2 flex text-2xl text-vineogray sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl px-4">
+        Descubre el vino perfecto para ti
+      </div>
+
+      {/* Left Side - Text and Button */}
+      <div className="absolute left-0 top-0 z-10 my-10 mb-6 ml-6 flex w-3/4 flex-col items-start justify-start text-vineogray sm:w-1/2 lg:w-1/3 sm:flex-row sm:py-4 md:mt-4 md:w-1/3 md:py-8 lg:w-1/4 xl:w-1/5">
+        <TitlesButton
+          subtitle="" // Optional: You can leave this empty or add a subtitle if needed
+          paragraphs={[
+            'Únete a Vineo, haz match con vinos que encajan con tus gustos gracias a nuestras recomendaciones personalizadas.',
+            'Sorpréndete con nuevos sabores y experiencias inolvidables.',
+          ]}
+          paragraphClassNames={[
+            'text-vineogray', // For the first paragraph
+            'text-vineogray', // For the second paragraph
+          ]}
+          buttonText="Empieza"
+          buttonLink="/start" // Adjust the link as necessary
+          reverseLayout={false}
+          showButton={true}
+        />
       </div>
     </div>
   );

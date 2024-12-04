@@ -16,7 +16,7 @@ const FaqItem: React.FC<FaqItemProps> = ({ question, answer }) => {
   return (
     <div className="border-b border-gray-300 py-4">
       <div className="flex justify-between items-center cursor-pointer" onClick={toggleOpen}>
-        <h3 className="text-lg font-semibold text-blue-600">{question}</h3>
+        <h3 className="text-lg font-bold text-vineogray">{question}</h3>
         <span>{isOpen ? '-' : '+'}</span>
       </div>
       {isOpen && <p className="text-gray-600 mt-2">{answer}</p>}

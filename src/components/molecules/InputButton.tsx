@@ -30,17 +30,29 @@ export const InputButton: React.FC<InputButtonProps> = ({
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className={`p-3 border-2 border-gray-300 rounded-xl ${inputWidth} ${inputHeight} pr-12`} // Added full border-radius for rounded input
+        className={`w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-vineogray/55 rounded-md pl-3 pr-16 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Email Address`} // Added full border-radius for rounded input
         placeholder="email"
       />
       
       {/* Button inside the input box */}
       <button
         onClick={handleSubmit}
-        className={`absolute right-0 top-0 bg-[#FF6F61] h-9 m-2 text-white py-2 px-4 rounded-xl ${buttonWidth} h-full`}
+        className={`absolute right-1 top-1 rounded bg-vineopink py-1 px-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none`}
       >
         {buttonText}
       </button>
     </div>
   );
 };
+
+{/* <div class="w-full max-w-sm min-w-[200px]">
+  <div class="relative">
+    <input type="email" class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-3 pr-16 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Email Address" />
+    <button
+      class="absolute right-1 top-1 rounded bg-slate-800 py-1 px-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+    >
+      Invite
+    </button>
+  </div>
+</div> */}

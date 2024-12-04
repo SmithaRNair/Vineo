@@ -105,6 +105,20 @@ const LATEST_GIFTS_QUERY = `
   }
 `;
 
+const GET_QUESTIONS_QUERY = `
+  query getQuestions {
+    getQuestions {
+      question
+      question_id
+      options {
+        id
+        option
+        description
+      }
+    }
+  }
+`;
+
 
 
 // Function to handle token refresh
@@ -345,6 +359,17 @@ export const authApi = createApi({
       }),
       transformResponse: (response) => response.data.getLatestUserGift,
     }),
+
+    getQuestions: builder.query({
+      query: () => ({
+        url: '/graphql',
+        method: 'POST',
+        body: {
+          query: GET_QUESTIONS_QUERY,
+        },
+      }),
+      transformResponse: (response) => response.data.getQuestions, // Transform the response
+    }),
      
   }),
 });
@@ -357,6 +382,7 @@ export const {
   useGetBoxWinePrintCardQuery,
   useLoadSubscriptionListForUserQuery,
   useGetLatestUserGiftQuery,
+  useGetQuestionsQuery,
 } = authApi;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 

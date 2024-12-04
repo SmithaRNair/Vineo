@@ -17,9 +17,12 @@ export const IMAGES = {
   bottle:'/images/bottle.png',
   answer:'/images/answer.png',
   winebox:'/images/bottlebox.png',
-  boxgif:'/images/boxgif.png',
-  graph:'/images/graph.png',
+  boxgif:'/images/boxgif.gif',
+  graph:'/images/graph.gif',
   bottleimg:'/images/bottleimage 1.png',
   bottleglass:'/images/bottle&glass.png',
+  letter: '/images/letter.png',
+  gif2: '/images/gif2.gif',
   
+
 };

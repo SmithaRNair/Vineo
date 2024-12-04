@@ -7,6 +7,9 @@ export default {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
         Domine: ['Domine', 'sans-serif'],
+        Playfire: ['Playfair', 'sans-serif'],
+        Lato: ['Lato', 'sans-serif'],
+
       },
       fontSize: {
         '20px': '20px',
@@ -26,7 +29,9 @@ export default {
         vineogray: '#394A59',
         logingray: '#303E63',
         eyecolor: '#A6A6A6',
+        vineoblack: '#18191A',
         
+
       },
       backgroundImage: {
         'glass-bottle': 'url(\'/images/glass-bottle.png\')',
