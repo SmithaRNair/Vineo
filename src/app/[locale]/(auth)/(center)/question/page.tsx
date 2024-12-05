@@ -8,9 +8,9 @@ import QuestionOptionsGrid from '@/components/molecules/QuestionOptionsGrid';
 
 const QuestionPage = () => {
   return (
-    <div className="container mx-auto bg-beige bg-cover w-full">
+    <div className="container bg-beige bg-cover max-w-full w-full ">
       {/* Vineo logo */}
-      <div className="mb-4 flex items-center justify-between px-4 py-2 ">
+      <div className="flex items-center justify-between sm:mb-2 lg:mb-0 xl:mb-0 2xl:mb-0">
         <Image src={IMAGES.logo} alt="Vineo Logo" width={100} height={50} />
         {/* Progress bar */}
       </div>

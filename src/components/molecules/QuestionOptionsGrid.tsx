@@ -6,6 +6,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 
 import { IMAGES } from '@/constants/AppConst';
+
 import QuestionCard from './QuestionCard'; // Import the QuestionCard
 
 const QuestionOptionsGrid: React.FC = () => {
@@ -60,29 +61,34 @@ const QuestionOptionsGrid: React.FC = () => {
     }
   };
 
-  
   const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
   // Get the current question
   const currentQuestion = questions[currentQuestionIndex];
 
   return (
-    <div className="flex flex-col items-center justify-center gap-2 text-center font-Lato min-h-screen w-full">
+    <div className="flex flex-col justify-center gap-2 text-center font-Lato">
       {/* Display Progress Bar just below the logo */}
-      <div className="mt-0 w-full mb-4">
+      <div className="mt-2 w-full">
         {/* Background bar (gray) */}
-        <div className="h-2 bg-gray-300 rounded-full w-full">
+        <div className="h-1 w-full rounded-full bg-gray-300">
           {/* Progress bar (vineopink) */}
           <div
-            className="h-2 bg-vineopink rounded-full"
+            className="h-1 rounded-full bg-vineopink"
             style={{
               width: `${progress}%`, // Dynamic width based on progress
             }}
-          ></div>
+          >
+          </div>
         </div>
       </div>
 
       {/* Display current question */}
-      <h1 className="mt-0 text-3xl text-logingray font-bold">{currentQuestionIndex+1}. {currentQuestion.question}</h1>
+      <h1 className="mt-0 text-2xl font-bold text-logingray">
+        {currentQuestionIndex + 1}
+        .
+        {' '}
+        {currentQuestion.question}
+      </h1>
 
       {/* Icon Section */}
       <div className="mb-2 flex justify-center">
@@ -90,7 +96,7 @@ const QuestionOptionsGrid: React.FC = () => {
       </div>
 
       {/* Display answer options */}
-      <div className="flex w-full flex-wrap justify-center gap-5">
+      <div className="flex w-full flex-wrap justify-center  gap-4 sm:gap-5 md:gap-6 lg:gap-8">
         {currentQuestion.options.map((option: any) => (
           <QuestionCard
             key={option.id}
@@ -103,18 +109,22 @@ const QuestionOptionsGrid: React.FC = () => {
       </div>
 
       {/* Navigation buttons */}
-      <div className="mt-8 flex gap-8 justify-center">
+      <div className="mt-8 flex justify-center gap-4 sm:gap-6 md:gap-8">
         <button
           onClick={handlePreviousQuestion}
           disabled={currentQuestionIndex === 0}
-          className="text-red-500 hover:text-red-700 focus:outline-none"
+          className={`${
+            currentQuestionIndex === 0 ? 'text-gray-300' : 'text-vineopink hover:text-pink-600'
+          } rounded-lg px-4 py-2 transition-all duration-300 focus:outline-none`}
         >
           <ChevronLeftIcon fontSize="large" />
         </button>
         <button
           onClick={handleNextQuestion}
           disabled={!selectedAnswers[currentQuestionIndex]} // Disable if no answer is selected for the current question
-          className="text-red-500 hover:text-red-700 focus:outline-none"
+          className={`${
+            !selectedAnswers[currentQuestionIndex] ? 'text-gray-300' : 'text-vineopink hover:text-pink-600'
+          } rounded-lg px-4 py-2 transition-all duration-300 focus:outline-none`}
         >
           <ChevronRightIcon fontSize="large" />
         </button>
