@@ -20,7 +20,7 @@ const SubscriptionPage = () => {
       {/* Fixed Sidebar */}
       <Sidebar />
           {/* Main Content */}
-      <div className="flex-1 p-6 overflow-x-hidden">
+      <div className="flex-1 p-6  w-full">
         <div className="ml-44 p-10 mx-auto max-w-6xl max-h-fit rounded-lg bg-white p-8 shadow-lg">
           <h2 className="mb-8 text-2xl font-semibold text-gray-700">Gestiona tu suscripción</h2>
 

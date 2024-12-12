@@ -6,9 +6,9 @@ import TitlesButton from '../molecules/TitlesButton'; // Import TitlesButton com
 
 const VineoCoinsSection = () => {
   return (
-    <div className="flex flex-col space-y-8">
+    <div className="flex flex-col space-y-2">
       {/* First Row: Flex with Beige Background */}
-      <div className="flex items-center justify-center bg-beige py-12">
+      <div className="flex items-center justify-center bg-beige py-2">
         <div className="max-w-4xl text-center px-6">
           <h2 className="font-domine font-normal text-3xl text-vineogray mb-6">
             Suba de nivel con cada caja

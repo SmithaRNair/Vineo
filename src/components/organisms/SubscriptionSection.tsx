@@ -8,7 +8,7 @@ import { Pagination } from 'swiper';
 
 const SubscriptionSection: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center bg-beige bg-cover bg-center mt-10 py-16 px-4 md:px-8">
+    <div className="flex flex-col items-center justify-center bg-beige bg-cover bg-center mt-10 py-2 px-4 md:px-8">
       {/* Header Section */}
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-vineogray mb-4">

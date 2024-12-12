@@ -7,7 +7,7 @@ import TitlesButton from '../molecules/TitlesButton'; // Adjust the import path 
 
 const FifthSection = () => {
   return (
-    <section className="flex flex-col items-center justify-between bg-beige py-12 lg:flex-row">
+    <section className="flex flex-col items-center justify-between bg-beige py-2 lg:flex-row">
       {/* Left side: GIF */}
       <div className="mb-8 flex-1 lg:mb-0">
         <img src={IMAGES.gif2} alt="Vineo Gif"/>

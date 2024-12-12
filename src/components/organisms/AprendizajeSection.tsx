@@ -6,7 +6,7 @@ import TitlesButton from '../molecules/TitlesButton'; // Import the TitlesButton
 
 const AprendizajeSection = () => {
   return (
-    <div className="px-8 py-12">
+    <div className="px-8 py-2">
       {/* Tu Aprendizaje Section */}
       <div className="my-12 md:ml-20 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col-reverse md:flex-row items-center">

@@ -52,9 +52,9 @@ const LoginForm = () => {
             password
             className="h-[97px] w-[894px] rounded-lg border px-4 py-2 text-sm"
           />
-          <div className="mb-4 flex items-center justify-between font-inter font-medium text-logingray">
+          <div className="mb-4 flex items-center justify-between text-sm font-inter font-medium text-logingray">
             <Checkbox name="rememberMe" label="Remember me" />
-            <Link href="#" className="font-inter text-sm font-medium text-logingray hover:text-gray-900">
+            <Link href="#" className="mb-4 font-inter text-sm font-medium text-logingray hover:text-gray-900">
               Have you forgotten your password?
             </Link>
           </div>

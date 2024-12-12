@@ -55,7 +55,7 @@ const TitlesButton: React.FC<TitlesButtonProps> = ({
         {paragraphs.map((paragraph, index) => (
           <p
             key={index}
-            className="font-Domine mb-7 text-lg font-normal text-vineoblack sm:text-lg  md:text-left md:text-xl lg:text-xl"
+            className="font-Domine  mb-7 text-lg font-normal text-vineoblack sm:text-lg  md:text-left md:text-xl lg:text-xl max-w-md"
             
           >
             {paragraph}

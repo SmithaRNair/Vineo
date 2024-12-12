@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 // import { BaseTemplate } from '@/templates/BaseTemplate';
-import { Header } from '@/components/organisms/Header';
+import { Header } from '@/components/molecules/Header';
 
 export default function Layout(props: {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ export default function Layout(props: {
 
   return (
     <>
-     <Header />
+     <Header showButtons={true}/>
       {/* <BaseTemplate
         leftNav={(
           <>

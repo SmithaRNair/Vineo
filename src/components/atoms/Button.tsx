@@ -6,7 +6,7 @@ type ButtonProps = {
   text: string;
   onClick: () => void;
   variant?: 'contained' | 'outlined' | 'text'; // Variant of the button
-  color?: 'orange' | 'secondary' | 'default'; // Color of the button
+  color?: 'bg-vineopink'; // Color of the button
   size?: 'small' | 'medium' | 'large'; // Size of the button
   fullWidth?: boolean; // If true, button will take full width
   sx?: object; // Custom styles (using sx prop for Material UI)

@@ -8,7 +8,7 @@ import TitlesButton from '../molecules/TitlesButton'; // Import the TitlesButton
 
 const ThirdSection = () => {
   return (
-    <div className="mb-10 min-h-screen px-4 py-12">
+    <div className="mb-10 min-h-screen px-4 py-5">
   {/* El Proceso Section */}
   <div className="my-12 flex flex-col md:flex-row gap-2 md:mt-12">
     {/* Left Image Section */}
@@ -16,8 +16,8 @@ const ThirdSection = () => {
       <Image
         src={IMAGES.boxgif}
         alt="boxgif"
-        width={400}
-        height={400}
+        width={600}
+        height={600}
         className="mx-auto object-contain"
       />
     </div>
@@ -25,8 +25,8 @@ const ThirdSection = () => {
     {/* Right Text Content */}
     <div className="flex-1 text-center font-Domine md:text-left md:text-lg md:ml-4 md:mr-24  max-w-lg">
       <TitlesButton
-        title={<span className="text-2xl font-medium">El Proceso</span>}
-        subtitle={<span className="font-bold">¿Cómo encontramos los vinos perfectos para ti?</span>}
+        title={<span className="text-5xl font-medium mb-4">El Proceso</span>}
+        subtitle={<span className="font-bold mt-4 text-3xl">¿Cómo encontramos los vinos perfectos para ti?</span>}
         paragraphs={[
           'Analizamos tus preferencias de vino a través de 18 aspectos clave.',
           'Luego, nuestro algoritmo determina la probabilidad de que te guste cada botella que incluiremos en cada caja.',

@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa'; // For Facebook and In
 import WhatsAppIcon from "@mui/icons-material/WhatsApp"; 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-100 py-8">
+    <footer className="bg-gray-100 py-2">
       <div className="container mx-auto px-6">
         {/* Logo and Links Section */}
         <div className="flex justify-between items-center mb-6">
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
           <a href="https://facebook.com" target="_blank" className="bg-white rounded-full  text-vineopink hover:text-blue-800 mx-2">
             <FaFacebook size={24} />
           </a>
-          <a href="https://instagram.com" target="_blank" className="bg-vineopink rounded- text-white hover:text-pink-800 mx-2">
+          <a href="https://instagram.com" target="_blank" className="bg-vineopink rounded-full text-white hover:text-pink-800 mx-2">
             <FaInstagram size={24} />
           </a>
           

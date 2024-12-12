@@ -51,7 +51,7 @@ const FaqSection = () => {
   ];
 
   return (
-    <div className="bg-white py-16 px-8">
+    <div className="bg-white py-2 px-8">
       <h2 className="text-4xl font-bold text-center text-vineogray mb-8">
         Preguntas Frecuentes
       </h2>
@@ -61,7 +61,7 @@ const FaqSection = () => {
         no dudes en ponerte en contacto con nosotros a través del Whatsapp
       </div>
 
-      <div className="font-domine font-normal text-vineoblack text-sm space-y-4">
+      <div className="flex flex-col justify-between font-domine font-normal text-vineoblack text-sm text-center mx-20">
         {faqData.map((faq, index) => (
           
             <FaqItem key={index} question={faq.question} answer={faq.answer} />
