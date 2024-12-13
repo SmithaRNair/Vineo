@@ -49,6 +49,8 @@ export default {
 
         'sidebar-gradient': 'linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.11) 15%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%)',
         'ans-gradient': 'linear-gradient(174.81deg, rgba(249, 246, 239, 0) -171.89%, rgba(247, 138, 121, 0.15) 15.79%, rgba(255, 210, 203, 0.29) 67%, rgba(247, 138, 121, 0.46) 100.7%)',
+        'footer-gradient': 'linear-gradient(to top, #E0DBD2 0%, #FEFDFC  100%, #FEFDFC 0%)',
+        'leter-gradient': 'linear-gradient(to top, #E0DBD2  80%, #FEFDFC  100%, #FEFDFC 0%)',
       },
       backdropBlur: {
         'sidebar-blur': '38px', // Custom blur for the sidebar background

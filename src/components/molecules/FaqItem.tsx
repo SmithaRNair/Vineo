@@ -1,25 +1,26 @@
-'use client';
-import React, { useState } from 'react';
+import React from 'react';
 
-interface FaqItemProps {
-  question: string;
-  answer: string;
-}
-
-const FaqItem: React.FC<FaqItemProps> = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleOpen = () => {
-    setIsOpen(!isOpen);
-  };
-
+const FaqItem = ({ question, answer, isOpen, toggle }) => {
   return (
-    <div className="border-b border-gray-300 py-4">
-      <div className="flex justify-between items-center cursor-pointer" onClick={toggleOpen}>
-        <h3 className="text-lg font-bold text-vineogray">{question}</h3>
-        <span>{isOpen ? '-' : '+'}</span>
+    <div className="border-b border-gray-200 py-4">
+      <div
+        className="flex justify-between items-center cursor-pointer"
+        onClick={toggle}
+      >
+        <h3 className="text-3xl font-Domine font-semibold">{question}</h3>
+        <span
+          className={`transform transition-transform ${
+            isOpen ? 'rotate-45' : 'rotate-0'
+          }`}
+        >
+          +
+        </span>
       </div>
-      {isOpen && <p className="text-gray-600 mt-2">{answer}</p>}
+      {isOpen && (
+        <div className="flex justify-start  mt-2 font-Domine font-normal text-sm ">
+          <p>{answer}</p>
+        </div>
+      )}
     </div>
   );
 };

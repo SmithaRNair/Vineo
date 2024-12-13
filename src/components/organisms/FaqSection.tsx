@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import FaqItem from '../molecules/FaqItem';
 
 const FaqSection = () => {
@@ -50,22 +51,37 @@ const FaqSection = () => {
     },
   ];
 
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFaqItem = (index) => {
+    if (openIndex === index) {
+      setOpenIndex(null);
+    } else {
+      setOpenIndex(index);
+    }
+  };
+
   return (
-    <div className="bg-white py-2 px-8">
-      <h2 className="text-4xl font-bold text-center text-vineogray mb-8">
-        Preguntas Frecuentes
-      </h2>
-      {/* Centering text below the heading */}
-      <div className="text-2xl font-normal text-center text-vineoblack mb-8 mx-auto max-w-4xl">
-        Aquí te resolvemos tus dudas, pero si aún tienes alguna que no se soluciona con esta sección,
-        no dudes en ponerte en contacto con nosotros a través del Whatsapp
+    <div className="bg-white py-10 mt-10 px-8">
+      <div className="flex flex-col w-full justify-center items-center max-w-full">
+        <h2 className="text-5xl font-bold font-Domine text-center text-vineogray mb-8">
+          Preguntas Frecuentes
+        </h2>
+        <div className="flex justify-center items-center text-[2rem] font-normal font-Domine text-center text-vineoblack mb-8 mx-10">
+          Aquí te resolvemos tus dudas, pero si aún tienes alguna que no se soluciona con esta sección,
+          no dudes en ponerte en contacto con nosotros a través del Whatsapp
+        </div>
       </div>
 
       <div className="flex flex-col justify-between font-domine font-normal text-vineoblack text-sm text-center mx-20">
         {faqData.map((faq, index) => (
-          
-            <FaqItem key={index} question={faq.question} answer={faq.answer} />
-          
+          <FaqItem
+            key={index}
+            question={faq.question}
+            answer={faq.answer}
+            isOpen={openIndex === index}
+            toggle={() => toggleFaqItem(index)}
+          />
         ))}
       </div>
     </div>

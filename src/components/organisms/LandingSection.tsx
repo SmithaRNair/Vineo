@@ -21,9 +21,9 @@ const LandingSection = () => {
         
       </div>
       {/* Input and Button Section (Centered) */}
-      <div className="flex w-full justify-center px-4  mt-2 mb-12 sm:px-8 md:px-12">
+      {/* <div className="flex w-full justify-center px-4  mt-2 mb-12 sm:px-8 md:px-12">
         <InputButton buttonText="Apúntate" onSubmit={handleEmailSubmit} inputHeight="h-20" inputWidth='w-full' buttonWidth='w-36'/>     
-      </div>
+      </div> */}
       {/* Second Row: IconTextCards */}
       <div className=" w-full  text-center font-Domine text-5xl font-bold text-vineogray sm:text-xl lg:text-5xl">
         Cómo funciona
