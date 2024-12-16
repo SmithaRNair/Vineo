@@ -8,27 +8,27 @@ import TitlesButton from '../molecules/TitlesButton'; // Import the TitlesButton
 
 const AlgoritmoSection = () => {
   return (
-    <div className="py-2 px-2">
+    <div className="p-1">
       {/* El Algoritmo Section */}
-      <div className="my-12 md:ml-20 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col justify-between items-center lg:flex-row ">
+      <div className="my-5 px-4 sm:px-6 md:ml-20 lg:px-8">
+        <div className="flex  ml-10  flex-col items-center justify-between  lg:flex-row ">
           {/* Right Column - Illustration/Graph Section */}
-          <div className="flex-1 justify-center order-first lg:order-last">
-            
-              <Image
-                src={IMAGES.graph}
-                alt="Algorithm Illustration"
-                width={300}
-                height={500}
-                className="object-contain mx-auto md:ml-8"
-              />
+          <div className="order-first flex-1 justify-center  lg:order-last">
+
+            <Image
+              src={IMAGES.graph}
+              alt="Algorithm Illustration"
+              width={380}
+              height={550}
+              className="mx-auto  md:ml-8 lg:ml-44"
+            />
           </div>
 
           {/* Left Column - TitlesButton */}
           <div className="flex-1 text-center md:text-left">
             <TitlesButton
-              title={<span className="font-medium text-2xl text-center md:text-left">El Algoritmo</span>}
-              subtitle={<span className="font-bold text-center md:text-left">Cada vez que valoras un vino, mejora el algoritmo</span>}
+              title="El Algoritmo"
+              subtitle="Cada vez que valoras un vino, mejora el algoritmo"
               paragraphs={[
                 'Nuestro algoritmo aprende con cada vino que valoras. Cuanto más valores, más precisas serán nuestras recomendaciones.',
               ]}

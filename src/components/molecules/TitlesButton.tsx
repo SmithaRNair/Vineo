@@ -31,13 +31,11 @@ const TitlesButton: React.FC<TitlesButtonProps> = ({
   };
 
   return (
-    <div
-      className={`relative py-1 ${reverseLayout ? 'flex-row-reverse' : 'flex-row'} flex bg-cover`}
-    >
-      <div className="relative py-2 z-10 px-1  text-white md:px-2 ">
+    <div  className={`relative w-full  mb-10 py-1 ${reverseLayout ? 'flex-row-reverse' : 'flex-row'} flex bg-cover`}>
+      <div className="relative py-2 text-white w-fit">
         {/* Title with Figma font styles */}
         <h2
-          className="font-Domine mb-6 text-left text-2xl font-bold  text-vineogray sm:text-2xl md:text-2xl lg:text-2xl"
+          className="font-Domine leading-relaxed mb-10 mt-14 text-left text-[2.8rem] font-normal  text-vineogray sm:text-2xl md:text-2xl lg:text-[2.8rem] "
           
         >
           {title}
@@ -45,7 +43,7 @@ const TitlesButton: React.FC<TitlesButtonProps> = ({
 
         {/* Subtitle with Figma font styles */}
         <h3
-          className="font-Domine mb-6 text-left text-xl font-medium text-vineogray sm:text-xl md:text-2xl lg:text-2xl"
+          className="font-Domine leading-[3rem] mb-14 mt-7 text-left text-[2.8rem] font-bold text-vineogray sm:text-xl md:text-2xl lg:text-[2.8rem] lg:leading-[2.5rem]"
          
         >
           {subtitle}
@@ -55,8 +53,7 @@ const TitlesButton: React.FC<TitlesButtonProps> = ({
         {paragraphs.map((paragraph, index) => (
           <p
             key={index}
-            className="font-Domine  mb-7 text-lg font-normal text-vineoblack sm:text-lg  md:text-left md:text-xl lg:text-xl max-w-md"
-            
+            className={`font-Domine mt-8 mb-4 text-lg font-normal text-vineoblack leading-relaxed sm:text-lg md:text-left md:text-xl lg:text-[2rem] max-w-fit ${paragraphClassNames[index] || ''}`}
           >
             {paragraph}
           </p>
@@ -66,7 +63,7 @@ const TitlesButton: React.FC<TitlesButtonProps> = ({
         {showButton && (
           <button
             onClick={handleButtonClick}
-            className="inline-block rounded-lg bg-vineopink px-6 py-2 text-white transition hover:bg-[#9c2b4b]"
+            className="h-16 w-56 mb-48 font-Domine font-normal text-[1.68rem] rounded-xl mt-14 bg-vineopink px-10 py-3 text-white transition hover:bg-[#9c2b4b]"
           >
             {buttonText}
           </button>

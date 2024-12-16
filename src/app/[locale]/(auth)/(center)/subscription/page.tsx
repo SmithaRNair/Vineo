@@ -1,27 +1,33 @@
 'use client';
-import React from 'react';
-import Sidebar from 'src/components/Sidebar';
-import SubscriptionCard from 'src/components/SubscriptionCard';
-import { useLoadSubscriptionListForUserQuery } from 'src/app/redux/apiSlice';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Pagination, Navigation } from 'swiper';
+
+import React from 'react';
+import { useLoadSubscriptionListForUserQuery } from 'src/app/redux/apiSlice';
+import Sidebar from 'src/components/Sidebar';
+import { Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import SubscriptionCard from '@/components/molecules/SubscriptionCard';
 
 const SubscriptionPage = () => {
   const { data: subscriptionPlans = [], error, isLoading } = useLoadSubscriptionListForUserQuery([10, 40, 30]);
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error loading subscription plans</p>;
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+  if (error) {
+    return <p>Error loading subscription plans</p>;
+  }
 
   return (
     <div className="flex min-h-screen bg-gray-100 font-sans">
       {/* Fixed Sidebar */}
       <Sidebar />
-          {/* Main Content */}
-      <div className="flex-1 p-6  w-full">
-        <div className="ml-44 p-10 mx-auto max-w-6xl max-h-fit rounded-lg bg-white p-8 shadow-lg">
+      {/* Main Content */}
+      <div className="w-full flex-1  p-6">
+        <div className="mx-auto ml-44 max-h-fit max-w-6xl rounded-lg bg-white p-10 p-8 shadow-lg">
           <h2 className="mb-8 text-2xl font-semibold text-gray-700">Gestiona tu suscripción</h2>
 
           {/* Responsive Swiper for Subscription Cards */}
@@ -37,9 +43,9 @@ const SubscriptionPage = () => {
             }}
             className="mySwiper"
           >
-            {subscriptionPlans.map((plan) => (
-              <SwiperSlide key={plan._id} className="flex justify-center items-center">
-                <div className="w-full max-w-[300px] h-[400px] flex justify-center items-center">
+            {subscriptionPlans.map(plan => (
+              <SwiperSlide key={plan._id} className="flex items-center justify-center">
+                <div className="flex h-[400px] w-full max-w-[300px] items-center justify-center">
                   <SubscriptionCard
                     title={plan.title}
                     price={`${plan.amount}€`}

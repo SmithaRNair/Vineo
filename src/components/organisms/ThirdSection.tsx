@@ -8,11 +8,11 @@ import TitlesButton from '../molecules/TitlesButton'; // Import the TitlesButton
 
 const ThirdSection = () => {
   return (
-    <div className="mb-10 min-h-screen px-4 py-5">
+    <div className="mb-10 w-full px-4 py-5">
   {/* El Proceso Section */}
-  <div className="my-12 flex flex-col md:flex-row gap-2 md:mt-12">
+  <div className=" flex flex-col justify-center my-12 md:flex-row  md:mt-14">
     {/* Left Image Section */}
-    <div className="flex-1">
+    <div className="flex-1 mt-10">
       <Image
         src={IMAGES.boxgif}
         alt="boxgif"
@@ -23,10 +23,10 @@ const ThirdSection = () => {
     </div>
 
     {/* Right Text Content */}
-    <div className="flex-1 text-center font-Domine md:text-left md:text-lg md:ml-4 md:mr-24  max-w-lg">
+    <div className="flex-1 text-center font-Domine md:text-left md:text-lg md:ml-4 md:mr-24  ">
       <TitlesButton
-        title={<span className="text-5xl font-medium mb-4">El Proceso</span>}
-        subtitle={<span className="font-bold mt-4 text-3xl">¿Cómo encontramos los vinos perfectos para ti?</span>}
+        title="El Proceso"
+        subtitle="¿Cómo encontramos los vinos perfectos para ti?"
         paragraphs={[
           'Analizamos tus preferencias de vino a través de 18 aspectos clave.',
           'Luego, nuestro algoritmo determina la probabilidad de que te guste cada botella que incluiremos en cada caja.',
@@ -41,26 +41,26 @@ const ThirdSection = () => {
   </div>
 
   {/* La esencia de Vineo Section */}
-  <div className="mt-20 flex flex-col gap-2 rounded-lg bg-beige px-4 md:flex-row md:px-12">
+  <div className="mt-16 flex flex-col rounded-lg bg-beige w-full md:flex-row ">
     {/* Left Image Section */}
-    <div className="flex-1 ml-14 justify-center md:justify-start">
+    <div className="ml-14 justify-center md:justify-start">
       <Image
         src={IMAGES.winebox}
         alt="Wine Box"
-        width={400}
-        height={500}
-        className="object-cover -mt-20 md:h-[300px] md:w-[500px] md:-mt-24"
+        width={1100}
+        height={800}
+        className="-mt-80"
       />
     </div>
 
     {/* Right Text Content */}
-    <div className="mt-10 flex-1 text-center md:mt-10 md:text-left md:ml-1">
-      <h3 className="mb-4 text-2xl font-semibold text-gray-800">
+    <div className=" flex-1 font-Domine md:mt-10 md:text-left  lg:max-w-4xl">
+      <div className="mt-14 mb-4 text-2xl font-bold text-[2.5rem] text-center text-vineogray">
         La esencia de Vineo
-      </h3>
-      <p className="text-gray-600">
+      </div>
+      <div className="mt-10 font-normal text-3xl text-left text-vineoblack">
         Recibe una caja con 3 vinos, 2 cuidadosamente seleccionados según tus preferencias y 1 que te sorprenderá con nuevos sabores y experiencias.
-      </p>
+      </div>
     </div>
   </div>
 </div>

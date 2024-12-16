@@ -64,7 +64,7 @@ const FaqSection = () => {
   return (
     <div className="bg-white py-10 mt-10 px-8">
       <div className="flex flex-col w-full justify-center items-center max-w-full">
-        <h2 className="text-5xl font-bold font-Domine text-center text-vineogray mb-8">
+        <h2 className="text-5xl mt-4 font-bold font-Domine text-center text-vineogray mb-8">
           Preguntas Frecuentes
         </h2>
         <div className="flex justify-center items-center text-[2rem] font-normal font-Domine text-center text-vineoblack mb-8 mx-10">
