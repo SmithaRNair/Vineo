@@ -46,11 +46,14 @@ export default {
         'beige': 'url(\'/images/background.jpg\')',
         'custom-gradient': 'linear-gradient(to right, #394A59 0%, rgba(33,33,33,0) 70%, #394A59 100%)',
         'card-gradient': 'linear-gradient(174.8deg, rgba(249, 249, 249, 0) -171.86%, rgba(244, 244, 244, 0.1) -30.43%, rgba(255, 255, 255, 0.61) 56.34%, #FFFFFF 119.41%)',
+        'wine-gradient': 'linear-gradient(91.27deg, #F3EFEA 100%, #E1DCD3 100%)',
 
         'sidebar-gradient': 'linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.11) 15%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%)',
         'ans-gradient': 'linear-gradient(174.81deg, rgba(249, 246, 239, 0) -171.89%, rgba(247, 138, 121, 0.15) 15.79%, rgba(255, 210, 203, 0.29) 67%, rgba(247, 138, 121, 0.46) 100.7%)',
         'footer-gradient': 'linear-gradient(to top, #E0DBD2 0%, #FEFDFC  100%, #FEFDFC 0%)',
-        'leter-gradient': 'linear-gradient(to top, #E0DBD2  80%, #FEFDFC  100%, #FEFDFC 0%)',
+        'letter-gradient': 'linear-gradient(to top, #E0DBD2  80%, #FEFDFC  100%, #FEFDFC 0%)',
+        
+
       },
       backdropBlur: {
         'sidebar-blur': '38px', // Custom blur for the sidebar background

@@ -23,6 +23,8 @@ export const IMAGES = {
   bottleglass:'/images/bottle&glass.png',
   letter: '/images/letter.png',
   gif2: '/images/gif2.gif',
-  
+  watsap: '/images/watsapp.png',
+  facebk: '/images/facebk.png',
+  insta: '/images/insta.png',
 
 };

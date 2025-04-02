@@ -39,6 +39,7 @@ const SubscriptionSection: React.FC = () => {
               title="Vineo IA"
               price="5€/mes"
               description="Suscripción a la IA de Vineo"
+              text="Nuestra IA te descubrirá 3 vinos que están alineados con tus gustos cada mes."
               perks={[
                 'Portafolio a medida',
                 '1 caja de 3 vinos al mes según tus gustos',
@@ -47,14 +48,10 @@ const SubscriptionSection: React.FC = () => {
               buttonText="Comenzar"
               showCommandButton={true}
               isHighlighted={true}
+              // buttonBackgroundColor="#FFFFFF"
+              // buttonTextColor="vineopink"
               renewalText="Pagas mes a mes, puedes cancelar en cualquier momento"
-              highlightedText="RECOMENDADO"
-              buttonText="Choose plan"
-              cardClassName="bg-orange-200 shadow-xl rounded-lg p-6 text-center w-full sm:w-80 md:w-1/3"
-              titleClassName="text-xl font-semibold"
-              priceClassName="text-3xl text-blue-500 font-bold"
-              buttonClassName="bg-blue-500 text-white py-2 px-6 mt-4"
-              
+              buttonClassName="bg-white text-vineopink py-2 px-6 rounded mt-4" // White background, pink text
             />
           </SwiperSlide>
 
@@ -63,16 +60,16 @@ const SubscriptionSection: React.FC = () => {
               title="Vineo Box"
               price="55€/mes"
               description="Suscripción con caja mensual"
+              text="Pagas mes a mes, puedes cancelar en cualquier momento"
               perks={[
                 'Portafolio a medida',
                 '1 caja de 3 vinos más según tus gustos',
                 'Cancelación gratuita en cualquier momento',
               ]}
               buttonText="Comenzar"
-              cardClassName="bg-white shadow-lg rounded-lg p-8 text-center w-full sm:w-80 md:w-1/3"
-              titleClassName="text-3xl font-Domine font-bold mt-10"
-              priceClassName="text-2xl text-vineogray font-bold mt-10"
-              buttonClassName="bg-blue-500 text-white py-2 px-6 rounded mt-10"
+              //  buttonBackgroundColor="vineopink"
+              // buttonTextColor="#FFFFFF"
+              buttonClassName="bg-vineopink text-white py-2 px-6 rounded mt-10" // Pink background, white text
             />
           </SwiperSlide>
 
@@ -87,6 +84,7 @@ const SubscriptionSection: React.FC = () => {
           title="Vineo IA"
           price="5€/mes"
           description="Suscripción a la IA de Vineo"
+          text="Nuestra IA te descubrirá 3 vinos que están alineados con tus gustos cada mes."
           perks={[
             'Portafolio a medida',
             '1 caja de 3 vinos al mes según tus gustos',
@@ -95,32 +93,27 @@ const SubscriptionSection: React.FC = () => {
           buttonText="Comenzar"
           isHighlighted={true}
           showCommandButton={true}
-          renewalText="Pagas mes a mes, puedes cancelar en cualquier momento"
-          highlightedText="RECOMENDADO"
-          buttonText="Choose plan"
-          cardClassName="bg-orange-200 shadow-xl rounded-lg p-6 text-center w-full sm:w-80 md:w-1/3"
-          titleClassName="text-xl font-semibold"
-          priceClassName="text-3xl text-blue-500 font-bold"
-          buttonClassName="bg-blue-500 text-white py-2 px-6 rounded mt-4"
+          //  buttonBackgroundColor="#FFFFFF"
+          //     buttonTextColor="vineopink"
+          buttonClassName="bg-white text-vineopink py-2 px-6 rounded mt-4" // White background, pink text
         />
 
         <SubscriptionCard
           title="Vineo Box"
           price="55€/mes"
           description="Suscripción con caja mensual"
+          text="Pagas mes a mes, puedes cancelar en cualquier momento"
+
           perks={[
             'Portafolio a medida',
             '1 caja de 3 vinos más según tus gustos',
             'Cancelación gratuita en cualquier momento',
           ]}
           buttonText="Comenzar"
-          cardClassName="bg-white shadow-lg rounded-lg p-8 text-center w-full sm:w-80 md:w-1/3"
-          titleClassName="text-3xl font-Domine font-bold mt-10"
-          priceClassName="text-2xl text-vineogray font-bold mt-10"
-          buttonClassName="bg-vineopink text-white py-2 px-6 rounded mt-10"
+          //  buttonBackgroundColor="vineopink"
+          //     buttonTextColor="#FFFFFF"
+          buttonClassName="bg-vineopink text-white py-2 px-6 rounded mt-10" // Pink background, white text
         />
-
-      
       </div>
     </div>
   );

@@ -23,7 +23,8 @@ export const InputButton: React.FC<InputButtonProps> = ({
   };
 
   return (
-    <div className="relative w-full max-w-md">
+    <div className='relative mt-2 w-full'>
+    
       {/* Input Field */}
       <input
         type="email"
@@ -41,5 +42,6 @@ export const InputButton: React.FC<InputButtonProps> = ({
         {buttonText}
       </button>
     </div>
+     
   );
 };

@@ -64,10 +64,10 @@ const FaqSection = () => {
   return (
     <div className="bg-white py-10 mt-10 px-8">
       <div className="flex flex-col w-full justify-center items-center max-w-full">
-        <h2 className="text-5xl mt-4 font-bold font-Domine text-center text-vineogray mb-8">
+        <h2 className="text-5xl  font-bold font-Domine text-center text-vineogray mb-12">
           Preguntas Frecuentes
         </h2>
-        <div className="flex justify-center items-center text-[2rem] font-normal font-Domine text-center text-vineoblack mb-8 mx-10">
+        <div className="flex justify-center mt-2 items-center text-[1.7rem] font-normal font-Domine text-center tracking-tight leading-7 text-vineoblack mb-8 mx-10 max-w-5xl">
           Aquí te resolvemos tus dudas, pero si aún tienes alguna que no se soluciona con esta sección,
           no dudes en ponerte en contacto con nosotros a través del Whatsapp
         </div>

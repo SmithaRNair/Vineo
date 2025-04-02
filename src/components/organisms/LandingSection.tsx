@@ -1,9 +1,7 @@
 'use client';
 
 import React from 'react';
-
 import { IMAGES } from '@/constants/AppConst';
-
 import { IconTextCard } from '../molecules/IconTextCard';
 import { InputButton } from '../molecules/InputButton';
 
@@ -13,24 +11,14 @@ const LandingSection = () => {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center bg-beige p-8">
-      {/* First Row: Text and Input Section */}
-      <div className=" mb-10 mt-14 flex w-full max-w-full flex-col items-center ">
-        <div className="text-5xl mb-6 font-inter font-normal text-vineogray ">Apúntate a la lista y aprovéchate de la oferta de lanzamiento</div>
-        <div className="mt-12 text-3xl font-inter font-light text-blackcolo">5€ de descuento PARA SIEMPRE</div>
-        
-      </div>
-      {/* Input and Button Section (Centered) */}
-      {/* <div className="flex w-full justify-center px-4  mt-2 mb-12 sm:px-8 md:px-12">
-        <InputButton buttonText="Apúntate" onSubmit={handleEmailSubmit} inputHeight="h-20" inputWidth='w-full' buttonWidth='w-36'/>     
-      </div> */}
-      {/* Second Row: IconTextCards */}
-      <div className=" w-full  text-center font-Domine text-5xl font-bold text-vineogray sm:text-xl lg:text-5xl">
+    <div className="flex h-fit flex-col items-center bg-beige w-full overflow-x-hidden ">
+      {/* Section Title */}
+      <div className="w-full mt-[41rem] mb-12 text-center font-Domine text-3xl font-bold text-vineogray sm:text-4xl md:text-5xl lg:text-6xl">
         Cómo funciona
       </div>
 
       {/* Cards Section */}
-      <div className="mt-12 flex w-full flex-col bg-cardgrad justify-center gap-10 sm:flex-row">
+      <div className="mt-12 mb-10 flex w-full flex-col gap-[5rem]  justify-center sm:flex-col sm: items-center  md:flex-col md: items-center lg:gap-[2rem] px-4  lg:flex-row lg:items-center">
         <IconTextCard
           iconSrc={IMAGES.vineoil}
           title="Contesta el cuestionario"
@@ -44,12 +32,18 @@ const LandingSection = () => {
         <IconTextCard
           iconSrc={IMAGES.bottle}
           title="Disfruta de la experiencia"
-          description="Recibe vino a domicilio cada mes y cancela en cualquier momento"
+          description="Prepárate para descubrir vino cada mes. Cancela en cualquier momento"
         />
       </div>
 
-      <div className="my-12 px-12 font-Domine font-normal">
-        <button type="submit" className="w-full whitespace-nowrap rounded-lg bg-vineopink px-7 py-2 font-Domine text-sm font-normal text-white transition hover:bg-red-400 md:text-lg">Contesta el cuestinario</button>
+      {/* Responsive Button Section */}
+      <div className="my-12 px-4 sm:px-8 md:px-12 lg:px-20 flex justify-center">
+        <button
+          type="submit"
+          className="w-full max-w-[90%] sm:max-w-[416px] h-16 mb-28 whitespace-nowrap rounded-xl bg-vineopink px-6 py-2 font-Domine text-xl font-normal text-white transition hover:bg-red-400 sm:text-2xl md:text-3xl lg:text-[1.68rem]"
+        >
+          Contesta el cuestionario
+        </button>
       </div>
     </div>
   );

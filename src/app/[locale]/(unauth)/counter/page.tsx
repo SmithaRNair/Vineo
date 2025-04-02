@@ -5,6 +5,7 @@ import { Suspense } from 'react';
 
 import { CounterForm } from '@/components/CounterForm';
 import { CurrentCount } from '@/components/CurrentCount';
+import { readConfigFile } from 'typescript';
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -59,3 +60,4 @@ const Counter = () => {
 export const dynamic = 'force-dynamic';
 
 export default Counter;
+

@@ -5,14 +5,16 @@ import TitlesButton from '../molecules/TitlesButton'; // Adjust the import path 
 
 export const HeroSection = () => {
   return (
-    <div className="relative min-h-screen  overflow-hidden bg-wines bg-cover bg-center bg-no-repeat pl-4 sm:pl-3 md:pl-5 lg:pl-5 xl:pl-5 2xl:pl-5">
-          {/* Main Text */}
-        <div className="ml-2 mt-10 flex px-4 font-bold text-2xl text-vineogray sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-4xl">
+    <section className="relative overflow-hidden">
+
+      <div className="bg-wines bg-cover bg-bottom bg-center  bg-no-repeat sm:bg-bottom md:bg-contain md:bg-right-bottom lg:bg-contain xl:bg-cover xl:bg-right-bottom">
+
+        {/* Main Text */}
+        <div className="ml-8 mt-12 flex-1 px-4 text-3xl text-[3.375rem] font-bold text-vineogray sm:text-2xl md:text-3xl lg:text-5xl">
           Descubre el vino perfecto para ti
         </div>
-
         {/* Left Side - Text and Button */}
-        <div className="flex ml-2 items-start text-vineogray sm:w-1/2 sm:py-4  md:w-1/4  lg:w-1/3 lg:text-2xl lg:w-1/5 xl:w-1/5 2xl:w-1/5 max-w-md">
+        <div className="ml-12 max-w-xl flex-1 items-start text-vineogray sm:max-w-md md:max-w-xl">
           <TitlesButton
             subtitle="" // Optional: You can leave this empty or add a subtitle if needed
             paragraphs={[
@@ -29,6 +31,40 @@ export const HeroSection = () => {
             showButton={true}
           />
         </div>
-    </div>
+      </div>
+    </section>
+
   );
 };
+// HeroSection.tsx
+// 'use client';
+// import React from 'react';
+
+// export const HeroSection = () => {
+//   return (
+//     <section className="relative bg-white overflow-hidden">
+//       {/* Background image */}
+//       <div
+//         className="absolute inset-0 z-0 bg-wines bg-right bg-no-repeat bg-contain md:bg-cover" >
+//       </div>
+
+//       {/* Content container */}
+//       <div className="relative z-20 container mx-auto px-4 py-16 md:py-24">
+//         <div className="w-full md:w-1/2 lg:w-2/5 space-y-2">
+//           <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+//             Descubre el vino perfecto para ti
+//           </h1>
+//           <p className="text-lg text-gray-600">
+//             Únete a Vinow, haz match con vinos que encajen con tus gustos en casa y nosotros nos encargamos del resto.
+//           </p>
+//           <p className="text-lg text-gray-600">
+//             Sorpréndete con nuevos sabores y experiencias inolvidables.
+//           </p>
+//           <button className="bg-vineopink hover:bg-orange-300 text-white py-2 px-8 rounded-md transition duration-300">
+//             Empezar
+//           </button>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };

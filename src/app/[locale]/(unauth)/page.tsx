@@ -1,3 +1,4 @@
+
 import AlgoritmoSection from '@/components/organisms/AlgoritmoSection';
 import AprendizajeSection from '@/components/organisms/AprendizajeSection';
 import FaqSection from '@/components/organisms/FaqSection';
@@ -8,6 +9,7 @@ import NewsletterSection from '@/components/organisms/NewsletterSection';
 import SubscriptionSection from '@/components/organisms/SubscriptionSection';
 import ThirdSection from '@/components/organisms/ThirdSection';
 import VineoCoinsSection from '@/components/organisms/VineoCoinsSection';
+import { readConfigFile } from 'typescript';
 
 const Home = () => {
   return (

@@ -14,34 +14,27 @@ const VineoCoinsSection = () => {
             Suba de nivel con cada caja
           </h2>
           <p className="text-[2rem] font-normal text-vineoblack mb-16">
-            Invita a amigos, valora tus vinos y accede a descuentos y ventajas únicas  con tus Vineo Coins 
+            Invita a amigos, valora tus vinos y accede a descuentos y ventajas únicas con tus Vineo Coins 
           </p>
-          
         </div>
       </div>
 
       {/* Second Row: Split into two columns */}
-      <div className="flex bg-bottleglass bg-contain bg-no-repeat bg-right-top">
-        {/* Left Column: Blank or content of your choice */}
-        
-        <div className="flex-1 justify-center ml-20 w-32 mt-14 order-first lg:order-last">
-            <Image
-              src={IMAGES.gif2}
-              alt="Algorithm Illustration"
-              width={300}
-              height={500}
-              className="object-contain mx-auto md:ml-20"
-            />
+      <div className="flex bg-bottleglass bg-contain  bg-no-repeat bg-right-top">
+        {/* Left Column: GIF */}
+        <div className="flex-1 justify-center ml-20 w-32 mt-32">
+          <Image
+            src={IMAGES.gif2}
+            alt="Algorithm Illustration"
+            width={500}
+            height={500}
+            className="object-contain border-2 rounded-lg shadow-lg mx-auto md:ml-20"
+          />
         </div>
-        
 
-        {/* Right Column: Image and TitlesButton Component */}
-        <div className="flex-1 ml-0 py-12">
-         
-          <div className="relative z-10  flex-col justify-end md:max-w-6xl md:ml-20 md:mt-10">
-            {/* Background image for the right side container */}
-            
-          
+        {/* Right Column: TitlesButton Component */}
+        <div className="flex-1 ml-0 py-11">
+          <div className="relative z-10 flex-col justify-end md:max-w-6xl  md:mt-10">
             {/* TitlesButton Component */}
             <TitlesButton
               title="Tus Beneficios"

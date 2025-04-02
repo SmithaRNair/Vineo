@@ -11,6 +11,7 @@ type TitlesButtonProps = {
   reverseLayout?: boolean;
   showButton?: boolean;
   paragraphClassNames?: string[];
+  buttonClass?: string;
 };
 
 const TitlesButton: React.FC<TitlesButtonProps> = ({
@@ -22,6 +23,7 @@ const TitlesButton: React.FC<TitlesButtonProps> = ({
   reverseLayout = false,
   showButton = true,
   paragraphClassNames = [],
+
 }) => {
   const router = useRouter();
 
@@ -31,39 +33,37 @@ const TitlesButton: React.FC<TitlesButtonProps> = ({
   };
 
   return (
-    <div  className={`relative w-full  mb-10 py-1 ${reverseLayout ? 'flex-row-reverse' : 'flex-row'} flex bg-cover`}>
-      <div className="relative py-2 text-white w-fit">
+    <div className={`relative w-full py-1 ${reverseLayout ? 'flex-row-reverse' : 'flex-row'} flex bg-cover`}>
+      <div className="relative w-fit py-2 text-white">
         {/* Title with Figma font styles */}
-        <h2
-          className="font-Domine leading-relaxed mb-10 mt-14 text-left text-[2.8rem] font-normal  text-vineogray sm:text-2xl md:text-2xl lg:text-[2.8rem] "
-          
+        <div
+          className="mb-10 mt-3 text-left font-Domine text-[2.8rem] font-normal leading-relaxed text-vineogray md:text-2xl lg:text-2xl"
         >
           {title}
-        </h2>
+        </div>
 
         {/* Subtitle with Figma font styles */}
-        <h3
-          className="font-Domine leading-[3rem] mb-14 mt-7 text-left text-[2.8rem] font-bold text-vineogray sm:text-xl md:text-2xl lg:text-[2.8rem] lg:leading-[2.5rem]"
-         
+        <div
+          className="mb-10 mt-7 text-center font-Domine text-[2.8rem] font-bold leading-[3rem] text-vineogray sm:text-5xl sm:text-left md:text-3xl md:text-left lg:text-[2.8rem] lg:leading-10"
         >
           {subtitle}
-        </h3>
+        </div>
 
         {/* Loop through paragraphs with Figma font styles */}
         {paragraphs.map((paragraph, index) => (
-          <p
+          <div
             key={index}
-            className={`font-Domine mt-8 mb-4 text-lg font-normal text-vineoblack leading-relaxed sm:text-lg md:text-left md:text-xl lg:text-[2rem] max-w-fit ${paragraphClassNames[index] || ''}`}
+            className={`mb-6 mt-12 max-w-fit font-Domine text-lg font-normal text-vineoblack sm:text-xl md:text-left md:text-xl lg:text-[2rem] lg:leading-10 ${paragraphClassNames[index] || ''}`}
           >
             {paragraph}
-          </p>
+          </div>
         ))}
 
         {/* Conditionally render the button */}
         {showButton && (
           <button
             onClick={handleButtonClick}
-            className="h-16 w-56 mb-48 font-Domine font-normal text-[1.68rem] rounded-xl mt-14 bg-vineopink px-10 py-3 text-white transition hover:bg-[#9c2b4b]"
+            className="mb-32 mt-14 h-16 w-56 rounded-xl bg-vineopink px-10 py-3 font-Domine text-[1.68rem] font-normal text-white transition hover:bg-red-400"
           >
             {buttonText}
           </button>

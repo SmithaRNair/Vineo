@@ -1,13 +1,13 @@
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import React from 'react';
-// import Image from next/image;
-// import { IMAGES } from '@/constants/AppConst';
+import Image from 'next/image';
+import { IMAGES } from '@/constants/AppConst';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 // For Facebook and Instagram
 const Footer: React.FC = () => {
   return (
     <footer className="bg-footer-gradient py-2">
-      <div className="mx-20 mt-5 mb-8 w-full border-t border-gray-400"></div>
+      <div className="mx-24  mt-5 mb-14 border-t border-[#958974]"></div>
       <div className="container mx-auto px-6">
         {/* Logo and Links Section */}
         {/* <div className="flex justify-between items-center mb-6"> */}
@@ -26,13 +26,13 @@ const Footer: React.FC = () => {
         <div className="mb-20 flex  justify-center gap-5">
           <a href="https://wa.me/" target="_blank" className="mx-2 rounded-full bg-vineopink text-white hover:text-green-800">
             
-            <WhatsAppIcon  className='w-9 h-9'/>
+            <Image src={IMAGES.watsap} width={37} height={37}/>
           </a>
           <a href="https://facebook.com" target="_blank" className="mx-2 rounded-full  bg-white text-vineopink hover:text-blue-800">
-            <FaFacebook className='w-9 h-9' />
+          <Image src={IMAGES.facebk} width={37} height={37}/>
           </a>
           <a href="https://instagram.com" target="_blank" className="mx-2 rounded-full bg-vineopink text-white hover:text-pink-800">
-            <FaInstagram className='w-9 h-9' />
+          <Image src={IMAGES.insta} width={37} height={37}/>
           </a>
 
         </div>

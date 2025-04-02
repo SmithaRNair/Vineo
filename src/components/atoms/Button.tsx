@@ -38,6 +38,7 @@ export const Button: React.FC<ButtonProps> = ({
         'backgroundColor': '#F78A79', // Updated button color based on your provided color
         'color': '#fff', // Text color (white)
         'border': '2px solid transparent', // Initial border set to transparent
+        'fontFamily': 'Domine, serif',
         '&:hover': {
           backgroundColor: '#F25D54', // Slightly darker shade on hover
           borderColor: '#F25D54', // Border color on hover

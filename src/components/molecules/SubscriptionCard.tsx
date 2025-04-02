@@ -1,5 +1,3 @@
-// components/SubscriptionCard.tsx
-
 import React from 'react';
 
 type SubscriptionCardProps = {
@@ -10,8 +8,7 @@ type SubscriptionCardProps = {
   renewalText?: string;
   isHighlighted?: boolean;
   buttonText?: string;
-  showCommandButton?: boolean; // New prop for the "Command" button
-
+  showCancelButton?: boolean; // Show cancel button for active plan
 };
 
 const SubscriptionCard: React.FC<SubscriptionCardProps> = ({
@@ -22,51 +19,58 @@ const SubscriptionCard: React.FC<SubscriptionCardProps> = ({
   renewalText,
   isHighlighted = false,
   buttonText = 'Cambiar',
-  showCommandButton = false,
+  showCancelButton = false,
 }) => {
   return (
     <div
-      className={`flex h-full w-96 flex-col items-start justify-start rounded-xl border p-12 text-left shadow-xl ${
-        isHighlighted ? 'border-none bg-vineopink text-white' : 'border-gray-200 bg-white text-gray-800'
-      }`}
+      className={`flex h-full w-[24.5rem] flex-col items-start rounded-xl p-8 shadow-xl 
+        ${isHighlighted ? 'bg-[#FA8072] text-white' : 'border border-gray-200 bg-white text-gray-800'}
+      `}
     >
       {/* Card Header */}
-      <div className={`flex w-full justify-center items-center rounded-t-lg py-2 ${isHighlighted ? 'bg-gray-800 text-white' : 'text-gray-800'}`}>
-        <h3 className="mt-10 font-Domine text-4xl font-bold">{title}</h3>
+      <div className="w-full flex justify-center">
+        <h3 className={`font-Domine text-2xl font-bold ${isHighlighted ? 'text-white' : 'text-gray-900'}`}>
+          {title}
+        </h3>
       </div>
 
       {/* Price */}
-      <p className="mt-10 font-Domine text-xl font-bold">{price}</p>
+      <p className="mt-3 text-3xl font-bold">{price}</p>
 
       {/* Description */}
-      <p className="mt-10 font-Domine text-xl font-bold">{description}</p>
+      <p className="mt-2 text-lg">{description}</p>
 
       {/* Perks List */}
-      <ul className={`mt-4 space-y-2 ${isHighlighted ? 'text-white' : 'text-gray-700'}`}>
+      <ul className={`mt-5 space-y-2 ${isHighlighted ? 'text-white' : 'text-gray-700'}`}>
         {perks.map((perk, index) => (
           <li key={index} className="flex items-center">
-            <span className={isHighlighted ? 'text-white' : 'text-red-500'}>✓</span>
-            {' '}
-            {perk}
+            <span className={isHighlighted ? 'text-white' : 'text-green-500'}>✓</span>
+            <span className="ml-2">{perk}</span>
           </li>
         ))}
       </ul>
 
-      {/* Renewal text for highlighted card */}
+      {/* Renewal Text */}
       {renewalText && isHighlighted && (
         <p className="mt-4 text-sm">{renewalText}</p>
       )}
-      {showCommandButton && (
-        <button className="mt-5 h-11 w-52 rounded-xl bg-vineogray py-2 text-white font-normal text-lg">
-          Command
-        </button>
-      )}
 
-      {/* Change button, hidden for highlighted card */}
-      {!isHighlighted && (
-        <div className="mt-5 w-full flex justify-center">
-          <button className="h-11 w-52 py-2 font-normal text-lg rounded-xl bg-vineogray text-white">
+      {/* Button Section */}
+      <div className="mt-5 w-full flex justify-center">
+        {!isHighlighted ? (
+          <button className="h-11 w-52 py-2 text-lg font-normal rounded-xl bg-vineopink text-white">
             {buttonText}
+          </button>
+        ) : (
+          <p className="text-sm mt-2">Renovado el 27/06/2024</p>
+        )}
+      </div>
+
+      {/* Cancel Subscription Button */}
+      {showCancelButton && (
+        <div className="mt-5 w-full flex justify-center">
+          <button className="h-11 w-52 py-2 text-lg font-normal rounded-xl bg-red-500 text-white">
+            Cancelar suscripción
           </button>
         </div>
       )}

@@ -1,7 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-// import { BOX_HISTORY_ADMIN_QUERY } from '@/graphql/queries';
 
-// const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 const apiUrl = 'https://vineoback-gh-qa.caprover2.innogenio.com/graphql';
 
 // GraphQL queries and mutations
@@ -43,13 +41,6 @@ const BOX_HISTORY_QUERY = `
   }
 `;
 
-/*const GET_SUBSCRIPTION_STATUS_MUTATION = `
-  mutation getSubscriptionStatus {
-    getSubscriptionStatus {
-      status
-    }
-  }
-`;*/
 const GET_SUBSCRIPTION_STATUS_MUTATION = `
   mutation getSubscriptionStatus {
     getSubscriptionStatus {
@@ -237,22 +228,7 @@ export const authApi = createApi({
       },
     }),
 
-    /*getSubscriptionStatus: builder.mutation({
-      query: () => ({
-        url: '/graphql',
-        method: 'POST',
-        body: {
-          query: GET_SUBSCRIPTION_STATUS_MUTATION,
-        },
-      }),
-      async onQueryStarted(arg, { queryFulfilled }) {
-        try {
-          await queryFulfilled;
-        } catch (error) {
-          console.error('Error fetching subscription status:', error);
-        }
-      },
-    }),*/
+
 
     getSubscriptionStatus: builder.mutation({
       query: () => ({
