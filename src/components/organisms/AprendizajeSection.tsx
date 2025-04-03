@@ -8,22 +8,22 @@ import TitlesButton from '../molecules/TitlesButton'; // Import the TitlesButton
 
 const AprendizajeSection = () => {
   return (
-    <div className="px-6 md:px-12 lg:px-20 py-6 md:py-10 mb-12 md:mb-20">
+    <div className="mb-12 p-6 md:mb-20 md:px-12 md:py-10 lg:px-20">
       {/* Tu Aprendizaje Section */}
-      <div className="flex flex-col-reverse md:flex-row items-center">
+      <div className="flex flex-col items-center md:flex-row">
         {/* Image Section */}
-        <div className="w-full md:w-1/2 flex justify-center my-8 md:my-12">
+        <div className="my-8 flex w-full justify-center md:my-12 md:w-1/2">
           <Image
             src={IMAGES.bottleimg}
             alt="Bottle Information"
-            width={400} // Adjust width for responsiveness
-            height={600} // Adjust height for responsiveness
-            className="w-auto h-auto max-w-full md:max-w-md lg:max-w-lg"
+            width={617} // Adjust width for responsiveness
+            height={626} // Adjust height for responsiveness
+            className="max-w-full"
           />
         </div>
 
         {/* Text Section */}
-        <div className="w-full md:w-1/2 text-center md:text-left mb-6 md:mb-0">
+        <div className="mb-6 w-full text-center md:mb-0 md:ml-8 md:w-1/2 md:text-left">
           <TitlesButton
             title="Tu Aprendizaje"
             subtitle="Aprende sobre vinos con cada caja"

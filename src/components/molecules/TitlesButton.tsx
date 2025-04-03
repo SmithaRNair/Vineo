@@ -37,14 +37,14 @@ const TitlesButton: React.FC<TitlesButtonProps> = ({
       <div className="relative w-fit py-2 text-white">
         {/* Title with Figma font styles */}
         <div
-          className="mb-10 mt-3 text-left font-Domine text-[2.8rem] font-normal leading-relaxed text-vineogray md:text-2xl lg:text-2xl"
+          className="mb-10 mt-3 text-center font-Domine text-[2.8rem] font-normal leading-relaxed text-vineogray sm:text-5xl sm:text-center md:text-3xl md:text-left lg:text-5xl"
         >
           {title}
         </div>
 
         {/* Subtitle with Figma font styles */}
         <div
-          className="mb-10 mt-7 text-center font-Domine text-[2.8rem] font-bold leading-[3rem] text-vineogray sm:text-5xl sm:text-left md:text-3xl md:text-left lg:text-[2.8rem] lg:leading-10"
+          className="mb-10 mt-7 text-center font-Domine text-[2.8rem] font-bold leading-[3rem] text-vineogray sm:text-5xl sm:text-center md:text-3xl md:text-left lg:text-[2.8rem] lg:leading-10"
         >
           {subtitle}
         </div>

@@ -8,23 +8,23 @@ import TitlesButton from '../molecules/TitlesButton'; // Import the TitlesButton
 
 const AlgoritmoSection = () => {
   return (
-    <div className="p-1">
+    <div className="flex flex-col items-center p-1 px-12">
       {/* El Algoritmo Section */}
-      <div className="my-5 px-4 sm:px-6 md:px-8 lg:px-12 lg:ml-2">
-        <div className="flex flex-col items-center justify-center lg:flex-row">
+      <div className="my-5 sm:px-6 lg:ml-6 ">
+        <div className="justify-left lg:items-left flex flex-col md:flex-row md:justify-center lg:flex-row">
           {/* Right Column - Illustration/Graph Section */}
-          <div className="order-first flex-1 w-full  lg:order-last lg:w-auto lg:ml-2">
+          <div className="order-first flex-1 md:order-last lg:order-last">
             <Image
               src={IMAGES.graph}
               alt="Algorithm Illustration"
               width={380}
               height={550}
-              className="mx-auto md:ml-8 lg:ml-44"
+              className="mx-10 xl:ml-64 md:ml-8"
             />
           </div>
 
           {/* Left Column - TitlesButton */}
-          <div className="flex-1 w-full px-32 text-center sm:(640-768)->text-center md:text-left lg:w-auto lg:px-10">
+          <div className="flex-1 text-center md:ml-10 md:w-1/2 md:text-left">
             <TitlesButton
               title="El Algoritmo"
               subtitle="Cada vez que valoras un vino, mejora el algoritmo"
